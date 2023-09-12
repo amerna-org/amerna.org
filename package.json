@@ -12,7 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.0.12"
+    "astro": "^3.0.12",
+    "astro-google-fonts-optimizer": "^0.2.2"
   },
   "devDependencies": {
     "prettier": "^3.0.3",

@@ -2,6 +2,7 @@
 import Header from "@/components/Header/Header.astro";
 import "@/styles/normalize.css";
 import "@/styles/global.css";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
 interface Props {}
 ---
@@ -13,11 +14,8 @@ interface Props {}
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
-      rel="stylesheet"
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
     />
     <title>Amrna | أمرنا</title>
   </head>
