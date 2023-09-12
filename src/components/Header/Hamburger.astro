@@ -1,0 +1,53 @@
+<button id="hamburger" class="btn ghost primary">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</button>
+
+<style>
+  #hamburger {
+    grid-area: menu;
+    place-self: center end;
+    margin-right: 0.5rem;
+    border-radius: var(--br-sm);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .line {
+    height: 2px;
+    border-radius: 1px;
+    background-color: rgb(var(--primary));
+    transition: width var(--tr-duration) var(--tr-tr-fn);
+  }
+
+  .line:nth-child(1) {
+    width: 19px;
+  }
+  .line:nth-child(2) {
+    width: 11px;
+  }
+  .line:nth-child(3) {
+    width: 16px;
+  }
+
+  #hamburger.active > .line {
+    width: 19px;
+  }
+
+  .transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  @media only screen and (min-width: 650px) {
+    #hamburger {
+      display: none;
+    }
+  }
+</style>

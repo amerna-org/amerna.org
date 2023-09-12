@@ -1,0 +1,107 @@
+:root {
+  --primary: 61, 46, 224;
+  --secondary: 47, 216, 216;
+  --dark: 20, 14, 89;
+  --light: 244, 243, 248;
+  --white: 255, 255, 255;
+
+  --text: var(--dark);
+  --background: var(--light);
+
+  --br-sm: 0.5rem;
+  --br-md: 0.875rem;
+  --br-lg: 1rem;
+
+  --shadow: 0px 8px 8px -4px rgba(24, 39, 75, 0.08),
+    0px 4px 6px -4px rgba(24, 39, 75, 0.12);
+
+  --tr-duration: 200ms;
+  --tr-tr-fn: ease-in-out;
+
+  --fz-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --fz-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --fz-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --fz-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --fz-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --fz-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --fz-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+  --bold: 700;
+}
+
+html {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  background: rgb(var(--background));
+  font-size: var(--fz-base);
+}
+
+.container {
+  padding-inline: 1rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+@media only screen and (max-width: 320px) {
+  .container {
+    padding: .5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(var(--text));
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.ghost {
+  background-color: transparent;
+  color: rgb(var(--text));
+}
+
+.btn.btn.ghost.primary:hover {
+  background-color: rgba(var(--primary), 15%);
+}
+
+.btn.btn.ghost.primary:active {
+  background-color: rgba(var(--primary), 25%);
+}
+
+.btn.ghost.primary {
+  background-color: transparent;
+  color: rgb(var(--primary));
+  transition: background-color var(--tr-duration) var(--tr-tr-fn);
+}
+
+.btn.primary {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--white));
+}
+
+.btn.lg {
+  border-radius: var(--br-md);
+  padding: 0.75rem 1.5rem;
+}
+
+.btn.md {
+  border-radius: var(--br-sm);
+  padding: 0.5rem 1rem;
+}
+
+.btn.sm {
+  border-radius: var(--br-sm);
+  padding: 0.25rem 0.75rem;
+}
+
+.bold {
+  font-weight: var(--bold);
+}

@@ -1,0 +1,54 @@
+<nav id="nav">
+  <ul>
+    <li>
+      <a href="#services">خدماتنا</a>
+    </li>
+    <li>
+      <a href="#projects">مشاريع مختارة</a>
+    </li>
+    <li>
+      <a href="#aboutus">من نحن</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    grid-area: nav;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  a {
+    text-underline-offset: 1.75rem;
+  }
+
+  @media only screen and (min-width: 650px) {
+    nav {
+      place-self: center;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media only screen and (max-width: 649px) {
+    nav {
+      display: none;
+    }
+    nav.expanded {
+      display: block;
+    }
+    ul {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      padding-inline-start: 0;
+    }
+  }
+</style>

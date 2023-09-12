@@ -1,15 +1,21 @@
 {
   "name": "amrna",
   "type": "module",
+  "license": "GPL-3.0",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "format": "yarn prettier --write . --plugin=prettier-plugin-astro",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^3.0.12"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0"
   }
 }

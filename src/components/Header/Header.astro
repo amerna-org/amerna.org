@@ -1,0 +1,56 @@
+---
+import Nav from "./Nav.astro";
+import Logo from "../Logo.astro";
+import Hamburger from "./Hamburger.astro";
+---
+
+<header>
+  <Logo />
+  <Nav />
+  <a href="#contactus" class="cta btn md primary">تواصل معنا</a>
+  <Hamburger active={false} />
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    background-color: rgb(var(--white));
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--br-md);
+    box-shadow: var(--shadow);
+    margin-block: 1rem;
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "logo cta menu"
+      "nav nav nav";
+    grid-auto-columns: 1fr 1fr auto;
+  }
+
+  .cta {
+    grid-area: cta;
+    place-self: center end;
+  }
+
+  @media only screen and (max-width: 320px) {
+    header {
+      grid-template-areas:
+        "logo menu"
+        "nav nav"
+        "cta cta";
+    }
+
+    .cta {
+      margin-top: 1rem;
+      justify-self: stretch;
+    }
+  }
+
+  @media only screen and (min-width: 650px) {
+    header {
+      grid-template-areas: "logo nav cta";
+      grid-auto-columns: unset;
+    }
+  }
+</style>
