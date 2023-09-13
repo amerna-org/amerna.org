@@ -1,14 +1,29 @@
+---
+const pages = [
+  {
+    href: "#services",
+    value: "خدماتنا",
+  },
+  {
+    href: "#projects",
+    value: "مشاريع مختارة",
+  },
+  {
+    href: "#aboutus",
+    value: "من نحن",
+  },
+];
+---
+
 <nav id="nav">
   <ul>
-    <li>
-      <a href="#services">خدماتنا</a>
-    </li>
-    <li>
-      <a href="#projects">مشاريع مختارة</a>
-    </li>
-    <li>
-      <a href="#aboutus">من نحن</a>
-    </li>
+    {
+      pages.map(({ href, value }) => (
+        <li>
+          <a href={href}>{value}</a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
 

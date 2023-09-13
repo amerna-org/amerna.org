@@ -1,7 +1,15 @@
 <button id="hamburger" class="btn ghost primary">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2" y="5" width="20" height="2" rx="1"></rect>
+    <rect x="2" y="11" height="2" rx="1"></rect>
+    <rect x="2" y="17" height="2" rx="1"></rect>
+  </svg>
 </button>
 
 <style>
@@ -10,39 +18,31 @@
     place-self: center end;
     margin-right: 0.5rem;
     border-radius: var(--br-sm);
-    padding: 0.5rem 0.5rem;
+    padding: 0.25rem;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 6px;
+    align-items: center;
+    justify-content: center;
   }
 
-  .line {
+  svg > rect {
     height: 2px;
     border-radius: 1px;
-    background-color: rgb(var(--primary));
+    fill: rgb(var(--primary));
     transition: width var(--tr-duration) var(--tr-tr-fn);
   }
 
-  .line:nth-child(1) {
-    width: 19px;
+  svg > rect:nth-child(1) {
+    width: 20px;
   }
-  .line:nth-child(2) {
+  svg > rect:nth-child(2) {
     width: 11px;
   }
-  .line:nth-child(3) {
+  svg > rect:nth-child(3) {
     width: 16px;
   }
 
-  #hamburger.active > .line {
-    width: 19px;
-  }
-
-  .transition {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+  #hamburger.active > svg > rect {
+    width: 20px;
   }
 
   @media only screen and (min-width: 650px) {
