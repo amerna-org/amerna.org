@@ -32,6 +32,7 @@
 html {
   font-family: "IBM Plex Sans Arabic", sans-serif;
   background: rgb(var(--background));
+  color: rgb(var(--text));
   font-size: var(--fz-base);
 }
 
@@ -43,7 +44,7 @@ html {
 
 @media only screen and (max-width: 320px) {
   .container {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -57,11 +58,17 @@ a {
   line-height: 1.7;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 .btn {
   display: inline-block;
   text-align: center;
   border: none;
   cursor: pointer;
+  user-select: none;
 }
 
 .btn.ghost {
@@ -69,6 +76,7 @@ a {
   color: rgb(var(--text));
 }
 
+.btn.btn.ghost.primary:focus,
 .btn.btn.ghost.primary:hover {
   background-color: rgba(var(--primary), 15%);
 }
@@ -88,6 +96,11 @@ a {
   color: rgb(var(--white));
 }
 
+.btn.secondary {
+  background-color: rgb(var(--white));
+  color: rgb(var(--text));
+}
+
 .btn.lg {
   border-radius: var(--br-md);
   padding: 0.75rem 1.5rem;
@@ -101,6 +114,22 @@ a {
 .btn.sm {
   border-radius: var(--br-sm);
   padding: 0.25rem 0.75rem;
+}
+
+.btn.shadow {
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.61);
+  transition: transform var(--tr-duration) var(--tr-tr-fn) box-shadow
+    var(--tr-duration) var(--tr-tr-fn);
+}
+
+.btn.shadow:hover {
+  box-shadow: 3px 4px 0 0px rgba(0, 0, 0, 61%);
+  transform: translate(-1px, -2px);
+}
+
+.btn.shadow:active {
+  box-shadow: 1px 2px 0 0px rgba(0, 0, 0, 61%);
+  transform: translate(0, 0);
 }
 
 .bold {

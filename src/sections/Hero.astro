@@ -5,6 +5,10 @@
       هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا،
       نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!
     </p>
+    <div class="btns">
+      <a href="#contactus" class="btn primary lg shadow">اطلب مشروعك الآن!</a>
+      <a href="#services" class="btn secondary lg shadow">تعرف على خدماتنا</a>
+    </div>
   </div>
   <div class="image">
     <img src="/images/hero.png" alt="" />
@@ -18,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .image {
@@ -38,6 +42,12 @@
     max-width: 17ch;
   }
 
+  .btns {
+    display: flex;
+    margin-top: 2rem;
+    gap: .5rem;
+  }
+
   p {
     max-width: 40ch;
   }
@@ -46,9 +56,20 @@
     color: rgb(var(--primary));
   }
 
+  @media only screen and (max-width: 400px) {
+    .btns {
+      flex-direction: column;
+    }
+  }
+
   @media only screen and (max-width: 800px) {
     section {
-      flex-direction: column-reverse;
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+
+    section .image {
+      max-width: 40ch;
     }
   }
 </style>
