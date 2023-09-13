@@ -54,6 +54,7 @@ a {
 
 * {
   -webkit-tap-highlight-color: transparent;
+  line-height: 1.7;
 }
 
 .btn {

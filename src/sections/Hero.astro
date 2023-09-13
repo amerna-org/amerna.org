@@ -1,0 +1,54 @@
+<section id="hero">
+  <div class="content">
+    <h1><span>أمرنا</span> نبني لك مشروعك من الفكرة الى النتفيذ!</h1>
+    <p>
+      هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا،
+      نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!
+    </p>
+  </div>
+  <div class="image">
+    <img src="/images/hero.png" alt="" />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 8rem;
+    padding-block: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .image {
+    flex: 0.4;
+  }
+
+  .image > img {
+    width: 100%;
+  }
+
+  .content {
+    flex: 0.6;
+  }
+
+  h1 {
+    font-size: var(--fz-xl);
+    max-width: 17ch;
+  }
+
+  p {
+    max-width: 40ch;
+  }
+
+  h1 span {
+    color: rgb(var(--primary));
+  }
+
+  @media only screen and (max-width: 800px) {
+    section {
+      flex-direction: column-reverse;
+    }
+  }
+</style>

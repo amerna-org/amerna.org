@@ -13,19 +13,22 @@ import Hamburger from "./Hamburger.astro";
 
 <style>
   header {
-    position: sticky;
-    top: 0;
+    max-width: 1200px;
+    margin-inline: 1rem;
+    position: fixed;
+    inset: 1rem 0 auto 0;
     background-color: rgb(var(--white));
-    padding: 0.5rem 1.25rem;
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
     border-radius: var(--br-md);
     box-shadow: var(--shadow);
-    margin-block: 1rem;
     display: grid;
     align-items: center;
     grid-template-areas:
       "logo cta menu"
       "nav nav nav";
     grid-auto-columns: 1fr 1fr auto;
+    z-index: 1000;
   }
 
   .cta {
@@ -51,6 +54,13 @@ import Hamburger from "./Hamburger.astro";
     header {
       grid-template-areas: "logo nav cta";
       grid-auto-columns: unset;
+      padding-block: 0.25rem;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    header {
+      margin-inline: auto;
     }
   }
 </style>
