@@ -33,7 +33,6 @@ const pages = [
   }
 
   ul {
-    list-style: none;
     display: flex;
     gap: 1.5rem;
   }
@@ -56,14 +55,17 @@ const pages = [
     nav {
       display: none;
     }
-    nav.expanded {
-      display: block;
-    }
     ul {
       flex-direction: column;
       gap: 1.5rem;
       padding-top: 1rem;
       padding-inline-start: 0;
     }
+  }
+</style>
+
+<style is:global>
+  body.expanded-menu nav {
+    display: block;
   }
 </style>

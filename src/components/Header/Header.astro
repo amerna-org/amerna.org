@@ -4,7 +4,7 @@ import Logo from "../Logo.astro";
 import Hamburger from "./Hamburger.astro";
 ---
 
-<header>
+<header id="header" class="card">
   <Logo />
   <Nav />
   <a href="#contactus" class="cta btn md primary shadow">تواصل معنا</a>
@@ -12,16 +12,16 @@ import Hamburger from "./Hamburger.astro";
 </header>
 
 <style>
+  header.overlay {
+  }
+
   header {
-    max-width: 1200px;
+    max-width: calc(1200px - 2.5rem);
     margin-inline: 1rem;
     position: fixed;
-    inset: 1rem 0 auto 0;
-    background-color: rgb(var(--white));
+    inset: .5rem 0 auto 0;
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    border-radius: var(--br-md);
-    box-shadow: var(--shadow);
     display: grid;
     align-items: center;
     grid-template-areas:
