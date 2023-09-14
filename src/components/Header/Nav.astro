@@ -5,16 +5,16 @@ const pages = [
     value: "الرئيسية",
   },
   {
+    href: "#aboutus",
+    value: "من نحن",
+  },
+  {
     href: "#services",
     value: "خدماتنا",
   },
   {
-    href: "#how",
+    href: "#projects",
     value: "مشاريع مختارة",
-  },
-  {
-    href: "#aboutus",
-    value: "من نحن",
   },
 ];
 ---
@@ -22,7 +22,7 @@ const pages = [
 <script>
   document.querySelectorAll("nav li > a").forEach((item) => {
     item.addEventListener("click", () => {
-      document.body.classList.remove("expanded-menu");
+      document.documentElement.classList.remove("expanded-menu");
     });
   });
 </script>
@@ -51,6 +51,8 @@ const pages = [
 
   a {
     text-underline-offset: 1.75rem;
+    display: block;
+    padding-block: 1rem;
   }
 
   @media only screen and (min-width: 650px) {
@@ -69,15 +71,23 @@ const pages = [
     }
     ul {
       flex-direction: column;
-      gap: 1.5rem;
       padding-top: 1rem;
       padding-inline-start: 0;
+      gap: 0;
+    }
+
+    ul li {
+      text-align: center;
+    }
+
+    ul a:not(:first-of-type) {
+      border-top: 1px solid rgb(var(--text));
     }
   }
 </style>
 
 <style is:global>
-  body.expanded-menu nav {
+  html.expanded-menu nav {
     display: block;
   }
 </style>

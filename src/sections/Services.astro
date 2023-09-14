@@ -1,3 +1,48 @@
+---
+import Web from "@/icons/web.astro";
+import Security from "@/icons/security.astro";
+import Dev from "@/icons/dev.astro";
+
+const services = [
+  {
+    Icon: Web,
+    title: "بناء وتطوير مواقع",
+  },
+  {
+    Icon: Security,
+    title: "خدمات الامن السيبراني",
+  },
+  {
+    Icon: Dev,
+    title: "خدمات برمجية",
+  },
+];
+---
+
 <section id="services">
-  <h2>our services</h2>
+  <h2>خدماتنا</h2>
+  <ul class="services">
+    {
+      services.map(({ Icon, title }) => (
+        <li class="card with-icon">
+          <Icon />
+          <h3>{title}</h3>
+        </li>
+      ))
+    }
+  </ul>
 </section>
+
+<style>
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media only screen and (min-width: 649px) {
+    .services {
+      flex-direction: row;
+    }
+  }
+</style>

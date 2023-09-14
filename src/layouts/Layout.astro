@@ -3,7 +3,7 @@ import Header from "@/components/Header/Header.astro";
 import Overlay from "@/components/Overlay.astro";
 import "@/styles/normalize.css";
 import "@/styles/global.css";
-// import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
 interface Props {}
 ---
@@ -16,9 +16,9 @@ interface Props {}
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#3D2EE0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- <GoogleFontsOptimizer -->
-    <!--   url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" -->
-    <!-- /> -->
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
+    />
     <title>Amrna | أمرنا</title>
   </head>
   <body class="container">

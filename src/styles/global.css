@@ -26,6 +26,7 @@
   --fz-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --fz-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
+  --normal: 400;
   --bold: 700;
 }
 
@@ -45,7 +46,8 @@ html {
   }
 }
 
-body.expanded-menu {
+html.expanded-menu,
+html.expanded-menu body {
   overflow: hidden;
 }
 
@@ -69,6 +71,8 @@ a {
 * {
   -webkit-tap-highlight-color: transparent;
   line-height: 1.7;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -91,6 +95,29 @@ section {
   background-color: rgb(var(--white));
   box-shadow: var(--shadow);
   border-radius: var(--br-md);
+}
+
+.card.with-icon {
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+h3 {
+  font-size: var(--fz-md);
+  font-weight: var(--normal);
+}
+
+.card.with-icon .icon {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
 }
 
 h2 {
@@ -181,4 +208,8 @@ img {
 
 .bold {
   font-weight: var(--bold);
+}
+
+.normal {
+  font-weight: var(--normal);
 }
