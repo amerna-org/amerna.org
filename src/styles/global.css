@@ -72,6 +72,37 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-color: rgb(var(--dark)) rgb(var(--background));
+}
+
+*::selection {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--white));
+}
+*::-webkit-scrollbar {
+  width: 0.35rem;
+  height: 0.35rem;
+}
+*::-webkit-scrollbar-track {
+  background-color: rgb(var(--background));
+}
+*::-webkit-scrollbar-track:hover {
+  background-color: rgb(var(--white));
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--primary));
+  border-radius: var(--br-sm);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--dark));
+}
+
+input,
+textarea {
+  caret-color: rgb(var(--primary));
+  -webkit-caret-color: rgb(var(--primary));
+  -moz-caret-color: rgb(var(--primary));
+  -ms-caret-color: rgb(var(--primary));
 }
 
 ul {
