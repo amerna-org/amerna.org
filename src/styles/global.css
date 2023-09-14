@@ -39,11 +39,9 @@ html {
   scroll-padding-top: var(--header-height);
 }
 
-@media only screen and (max-width: 1200px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
+html,
+body {
+  overflow-x: hidden;
 }
 
 html.expanded-menu,

@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div class="wave"></div>
+</div>
+
+<style>
+  .wrapper {
+    --size: 100%;
+    width: calc(var(--size) + 2px);
+    aspect-ratio: 1;
+    position: absolute;
+    left: calc(50% - 1px);
+    top: 3px;
+    transform: translate(-50%, -100%);
+    border-radius: 5px;
+    background-color: rgb(var(--dark));
+    overflow: hidden;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .wave {
+    width: calc(var(--size) * 2.1);
+    aspect-ratio: 1;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    margin-left: calc(var(--size) * -1);
+    margin-top: calc(var(--size) * -1);
+    border-radius: 45%;
+    background-color: rgb(var(--background));
+    animation: wave 25s infinite linear;
+  }
+
+  @keyframes wave {
+    from {
+      transform: rotate(0deg);
+    }
+    from {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media only screen and (min-width: 650px) {
+    .wave {
+      animation-duration: 50s;
+    }
+  }
+</style>

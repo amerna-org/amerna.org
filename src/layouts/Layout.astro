@@ -1,5 +1,6 @@
 ---
 import Header from "@/components/Header/Header.astro";
+import Footer from "@/components/Footer.astro";
 import Overlay from "@/components/Overlay.astro";
 import "@/styles/normalize.css";
 import "@/styles/global.css";
@@ -21,10 +22,11 @@ interface Props {}
     />
     <title>Amrna | أمرنا</title>
   </head>
-  <body class="container">
+  <body>
     <Overlay />
     <Header />
     <slot />
+    <Footer />
 
     <script>
       import "../scripts/utils.js";
