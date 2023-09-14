@@ -34,10 +34,19 @@ html {
   background: rgb(var(--background));
   color: rgb(var(--text));
   font-size: var(--fz-base);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+@media only screen and (max-width: 1200px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 body.expanded-menu {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -60,6 +69,7 @@ a {
 * {
   -webkit-tap-highlight-color: transparent;
   line-height: 1.7;
+  box-sizing: border-box;
 }
 
 ul {
@@ -68,7 +78,13 @@ ul {
 }
 
 section {
-  padding-block: 5rem;
+  padding-block: 3rem;
+}
+
+@media only screen and (min-wdth: 650px) {
+  section {
+    padding-block: 5rem;
+  }
 }
 
 .card {
@@ -148,8 +164,9 @@ img {
 
 .btn.shadow {
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.6);
-  transition: transform var(--tr-duration) var(--tr-tr-fn) box-shadow
-    var(--tr-duration) var(--tr-tr-fn);
+  transition:
+    transform var(--tr-duration) var(--tr-tr-fn),
+    box-shadow var(--tr-duration) var(--tr-tr-fn);
 }
 
 .btn.shadow:hover {

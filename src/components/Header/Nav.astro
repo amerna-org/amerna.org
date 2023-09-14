@@ -1,11 +1,15 @@
 ---
 const pages = [
   {
+    href: "#hero",
+    value: "الرئيسية",
+  },
+  {
     href: "#services",
     value: "خدماتنا",
   },
   {
-    href: "#projects",
+    href: "#how",
     value: "مشاريع مختارة",
   },
   {
@@ -14,6 +18,14 @@ const pages = [
   },
 ];
 ---
+
+<script>
+  document.querySelectorAll("nav li > a").forEach((item) => {
+    item.addEventListener("click", () => {
+      document.body.classList.remove("expanded-menu");
+    });
+  });
+</script>
 
 <nav id="nav">
   <ul>

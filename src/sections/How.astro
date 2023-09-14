@@ -3,6 +3,7 @@ import Step1 from "@/icons/step1.astro";
 import Step2 from "@/icons/step2.astro";
 import Step3 from "@/icons/step3.astro";
 import Arrow from "@/icons/arrow.astro";
+import Ornament from "@/components/Ornament.astro";
 ---
 
 <section id="how">
@@ -12,15 +13,18 @@ import Arrow from "@/icons/arrow.astro";
       <Step1 />
       <span>قدم لنا فكرتك</span>
       <Arrow />
+      <Ornament x={100} y={0} size={8} gap=".5rem" cols={5} count={35} />
     </li>
     <li class="card step">
       <Step2 />
       <span>نبني مشروعك</span>
       <Arrow />
+      <Ornament x={0} y={100} size={8} gap=".5rem" cols={5} count={35} />
     </li>
     <li class="card step">
       <Step3 />
       <span>استلم مشروعك</span>
+      <Ornament x={100} y={100} size={8} gap=".5rem" cols={5} count={35} />
     </li>
   </ul>
 </section>
@@ -29,27 +33,32 @@ import Arrow from "@/icons/arrow.astro";
   .steps {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   .step {
     padding: 2rem 1rem;
     text-align: center;
-    width: calc(100% - 2rem);
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     position: relative;
-  }
-
-  .step:nth-child(even) {
-    margin-inline-start: auto;
+    overflow: visible;
   }
 
   @media only screen and (min-width: 650px) {
+    .steps {
+      gap: 3rem;
+    }
+
     .step {
-      max-width: calc(42.5% - 2rem);
+      max-width: 42.5%;
+    }
+
+    .step:nth-child(even) {
+      margin-inline-start: auto;
     }
   }
 
@@ -78,7 +87,7 @@ import Arrow from "@/icons/arrow.astro";
     }
 
     .step > .arrow path {
-      fill: rgb(var(--text))
+      fill: rgb(var(--text));
     }
 
     .step:nth-child(odd) > .arrow {

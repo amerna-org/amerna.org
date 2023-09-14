@@ -1,0 +1,59 @@
+---
+interface Props {
+  count?: number;
+  cols?: number;
+  x?: number;
+  y?: number;
+  color?: string;
+  size?: number;
+  gap?: string;
+}
+
+const {
+  count = 45,
+  cols = 9,
+  x = 50,
+  y = 50,
+  color = "--secondary",
+  size = 20,
+  gap = "1rem",
+} = Astro.props;
+---
+
+<div class="ornament">
+  {Array.from(Array(count), () => <span />)}
+</div>
+
+<style
+  define:vars={{
+    cols,
+    gap,
+    x: `${x}%`,
+    y: `${y}%`,
+    color: `rgb(var(${color}))`,
+    size: `${size}px`,
+  }}
+>
+  .ornament {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), auto);
+    width: calc(var(--cols) * (var(--size) + var(--gap)));
+    gap: var(--gap);
+    /* transition: */
+    /*   gap ease-in-out 200ms, */
+    /*   transform ease-in-out 300ms; */
+  }
+
+  .ornament > span {
+    display: inline-block;
+    width: var(--size);
+    aspect-ratio: 1;
+    background-color: var(--color);
+    border-radius: 50%;
+  }
+</style>
