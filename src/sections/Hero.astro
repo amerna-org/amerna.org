@@ -1,21 +1,31 @@
 <section id="hero" class="container">
   <div class="content">
-    <h1><span>أمرنا</span> نبني لك مشروعك من الفكرة الى النتفيذ!</h1>
-    <p>
+    <h1 class="hero-txt">
+      <span>أمرنا</span> نبني لك مشروعك من الفكرة الى النتفيذ!
+    </h1>
+    <p class="hero-txt">
       هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا،
       نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!
     </p>
     <div class="btns">
-      <a href="#contact" class="btn primary lg shadow">اطلب مشروعك الآن!</a>
-      <a href="#services" class="btn tertiary lg shadow">تعرف على خدماتنا</a>
+      <a href="#contact" class="btn primary lg shadow hero-btn"
+        >اطلب مشروعك الآن!</a
+      >
+      <a href="#services" class="btn tertiary lg shadow hero-btn"
+        >تعرف على خدماتنا</a
+      >
     </div>
   </div>
-  <div class="image">
+  <div class="hero-img">
     <img src="/images/hero.png" alt="" />
   </div>
 </section>
 
 <style>
+  .hero-txt {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
   section {
     margin-top: var(--header-height);
     display: flex;
@@ -24,11 +34,11 @@
     gap: 3rem;
   }
 
-  .image {
+  .hero-img {
     flex: 0.4;
   }
 
-  .image > img {
+  .hero-img > img {
     width: 100%;
   }
 
