@@ -29,7 +29,7 @@ interface Props {}
     <Header />
     <slot />
     <Footer />
-
+<!--
     <script
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -37,10 +37,12 @@ interface Props {}
     <script
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-    ></script>
+    ></script> -->
+
     <script>
       import "../scripts/utils.js";
-      import "../scripts/animate.js";
+      import "../scripts/gsap.js";
+      import "../scripts/lenis.js";
     </script>
   </body>
 </html>

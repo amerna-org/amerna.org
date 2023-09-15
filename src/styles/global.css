@@ -35,7 +35,7 @@ html {
   background: rgb(var(--background));
   color: rgb(var(--text));
   font-size: var(--fz-base);
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: var(--header-height);
 }
 

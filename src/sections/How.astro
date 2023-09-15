@@ -9,19 +9,19 @@ import Ornament from "@/components/Ornament.astro";
 <section id="how" class="container">
   <h2>كيف يعمل أمرنا</h2>
   <ul class="steps">
-    <li class="card with-icon">
+    <li id="step-1" class="card with-icon">
       <Step1 />
       <h3>قدم لنا فكرتك</h3>
       <Arrow />
       <Ornament x={100} y={0} size={8} gap=".5rem" cols={5} count={35} />
     </li>
-    <li class="card with-icon">
+    <li id="step-2" class="card with-icon">
       <Step2 />
       <h3>نبني مشروعك</h3>
       <Arrow />
       <Ornament x={0} y={100} size={8} gap=".5rem" cols={5} count={35} />
     </li>
-    <li class="card with-icon">
+    <li id="step-3" class="card with-icon">
       <Step3 />
       <h3>نسلمك مشروعك</h3>
       <Ornament x={100} y={100} size={8} gap=".5rem" cols={5} count={35} />
@@ -54,6 +54,7 @@ import Ornament from "@/components/Ornament.astro";
 <style is:global>
   .steps li > .arrow {
     display: none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 
   @media only screen and (min-width: 649px) {

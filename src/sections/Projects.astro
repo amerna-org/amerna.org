@@ -38,9 +38,7 @@ const projects = [
     display: flex;
     max-width: 100%;
     padding-bottom: 0.5rem;
-    scroll-snap-type: x;
-    scroll-snap-type: x mandatory;
-    overflow-y: auto;
+    overflow-y: hidden;
     gap: 1rem;
   }
 
@@ -60,7 +58,7 @@ const projects = [
     position: relative;
     overflow: hidden;
     border-radius: var(--br-md);
-    height: 14rem;
+    height: 17rem;
   }
 
   li a:hover::before {
