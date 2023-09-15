@@ -1,5 +1,7 @@
 ---
 import Wave from "@/components/Wave.astro";
+import Form from "@/components/Form.astro";
+import Logo from "@/components/Logo.astro";
 ---
 
 <footer id="contact">
@@ -8,6 +10,13 @@ import Wave from "@/components/Wave.astro";
   </div>
   <div class="container">
     <h2>تواصل معنا</h2>
+    <div class="contact">
+      <div>
+        <Logo />
+        <p>هل أنت مستعد لتحقيق فكرتك؟ إتصل بنا الأن للبدء!</p>
+      </div>
+      <Form />
+    </div>
   </div>
 </footer>
 
@@ -17,5 +26,15 @@ import Wave from "@/components/Wave.astro";
     color: rgb(var(--white));
     position: relative;
     padding-block: 3rem;
+  }
+
+  .contact {
+    display: grid;
+  }
+
+  @media only screen and (min-width: 650px) {
+    .contact {
+      grid-template-columns: 1fr 1fr ;
+    }
   }
 </style>

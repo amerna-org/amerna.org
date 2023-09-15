@@ -1,0 +1,99 @@
+<form action="#" class="card">
+  <label for="name">الإسم *</label>
+  <input autocomplete="name" id="name" type="text" required />
+
+  <label for="email">البريد اإلكتروني *</label>
+  <input autocomplete="email" id="email" type="email" required />
+
+  <label for="service">نوع الخدمة *</label>
+  <div class="custom-select">
+    <select name="service" id="service" required>
+      <option value="web">بناء وتطوير مواقع</option>
+      <option value="security">خدمات الامن السيبراني</option>
+      <option value="dev">خدمات برمجية</option>
+      <option value="other">أخر</option>
+    </select>
+  </div>
+
+  <label for="message">ملخص المشروع *</label>
+  <textarea name="message" id="message" required rows="10"></textarea>
+
+  <input type="submit" class="btn primary shadow md" value="أرسل">
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding: 2rem;
+  }
+
+  label {
+    color: rgb(var(--text));
+    font-size: var(--fz-sm);
+    padding-inline-start: var(--br-sm);
+  }
+
+  input[type="submit"],
+  label:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+
+  textarea,
+  select,
+  input {
+    font-size: var(--fz-sm);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--br-sm);
+    border: 1px solid rgb(var(--dark));
+    background-color: rgb(var(--white));
+    padding: 0.675em 1em 0.675em 3em;
+    line-height: 1.7;
+  }
+
+  textarea:focus,
+  select:focus,
+  input:focus {
+    border: 1px solid rgb(var(--secondary));
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 5rem;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .custom-select {
+    position: relative;
+  }
+
+  .custom-select::before,
+  .custom-select::after {
+    --size: 0.3rem;
+    content: "";
+    position: absolute;
+    left: 1rem;
+    pointer-events: none;
+  }
+
+  .custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgb(var(--text));
+    top: 40%;
+  }
+
+  .custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgb(var(--text));
+    top: 55%;
+  }
+</style>

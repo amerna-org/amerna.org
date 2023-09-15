@@ -5,7 +5,9 @@ import Hamburger from "./Hamburger.astro";
 ---
 
 <header id="header" class="card">
-  <Logo />
+  <a href="#">
+    <Logo />
+  </a>
   <Nav />
   <a href="#contact" class="cta btn md primary shadow">تواصل معنا</a>
   <Hamburger active={false} />
@@ -19,7 +21,7 @@ import Hamburger from "./Hamburger.astro";
     max-width: calc(1200px - 2rem);
     margin-inline: 1rem;
     position: fixed;
-    inset: .5rem 0 auto 0;
+    inset: 0.5rem 0 auto 0;
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
     display: grid;

@@ -25,7 +25,7 @@ const projects = [
       projects.map(({ img, href, alt }) => (
         <li class="card">
           <a href={href} target="_blank">
-            <img src={img} alt={alt} />
+            <img decoding="async" loading="lazy" src={img} alt={alt} />
           </a>
         </li>
       ))
@@ -37,7 +37,7 @@ const projects = [
   .projects {
     display: flex;
     max-width: 100%;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     scroll-snap-type: x;
     scroll-snap-type: x mandatory;
     overflow-y: auto;
@@ -45,7 +45,7 @@ const projects = [
   }
 
   li {
-    padding: .75rem;
+    padding: 0.75rem;
     scroll-snap-align: start;
   }
 
@@ -64,11 +64,11 @@ const projects = [
   }
 
   li a:hover::before {
-    content: '';
-    background-image:url("/icons/open.svg");
+    content: "";
+    background-image: url("/icons/open.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(var(--text), 70%);
+    background-color: rgba(0, 0, 0, 40%);
     background-size: 2rem;
     position: absolute;
     inset: 0;
