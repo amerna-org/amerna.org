@@ -15,6 +15,11 @@ const projects = [
     href: "#",
     alt: "",
   },
+  {
+    img: "/images/proj1.png",
+    href: "#",
+    alt: "",
+  },
 ];
 ---
 
@@ -36,15 +41,13 @@ const projects = [
 <style>
   .projects {
     display: flex;
-    max-width: 100%;
     padding-bottom: 0.5rem;
-    overflow-y: hidden;
     gap: 1rem;
+    width: fit-content;
   }
 
   li {
     padding: 0.75rem;
-    scroll-snap-align: start;
   }
 
   li img {

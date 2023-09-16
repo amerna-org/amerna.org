@@ -26,6 +26,12 @@ gsap.from(".hero-img", {
   y: 100,
 });
 
+ScrollTrigger.defaults({
+  start: "top 75%",
+  end: "bottom 75%",
+  scrub: 1,
+});
+
 gsap.fromTo(
   "#header .logo, #nav li",
   {
@@ -48,9 +54,6 @@ const titleVars: gsap.TweenVars = {
 const howTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#how",
-    start: "top 75%",
-    end: "bottom 75%",
-    scrub: 1,
   },
 });
 
@@ -100,17 +103,68 @@ howTl
 const aboutTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#about",
-    start: "top 75%",
-    end: "bottom 75%",
-    scrub: 1,
   },
 });
 
 aboutTl.from("#about h2", titleVars).from(
   "#about .card",
   {
-    scale: 1.55,
-    rotateX: "90deg",
+    y: 100,
+    opacity: 0,
   },
   "-=1.5",
 );
+const projWrapper = document.getElementById("projects");
+const projects = document.querySelector("#projects > .projects");
+const getAmountToScroll = () => {
+
+  const container = document.querySelector(".container");
+  const containerStyle = window.getComputedStyle(container);
+  const containerPad = parseInt(containerStyle.paddingInline) * 2;
+  return projects?.offsetWidth - projWrapper?.offsetWidth + containerPad;
+};
+
+const projTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: projWrapper,
+    end: () => `+=${getAmountToScroll()}`,
+    invalidateOnRefresh: true,
+  },
+});
+
+projTl
+  .fromTo("#projects h2", titleVars, {
+    opacity: 1,
+    y: 0,
+  })
+  .fromTo(
+    "#projects > .projects li",
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      opacity: 1,
+      stagger: 0.5,
+      x: 0,
+    },
+    "<",
+  );
+
+ScrollTrigger.create({
+  trigger: projWrapper,
+  start: `top ${document.getElementById("header")?.offsetHeight}`,
+  end: () => `+=${getAmountToScroll() * 1.5}`,
+  pin: true,
+  invalidateOnRefresh: true,
+  animation: gsap.fromTo(
+    projects,
+    {
+      x: 0,
+    },
+    {
+      x: getAmountToScroll,
+      ease: "none",
+    },
+  ),
+});

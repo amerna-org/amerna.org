@@ -4,8 +4,8 @@
   @media (hover: hover) {
     .cursor-follower {
       position: fixed;
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       border-radius: 100%;
       z-index: 1;
       transition:
@@ -16,13 +16,15 @@
       pointer-events: none;
       z-index: 10000;
       transform: translate(2px, 2px);
-      border: 1px solid rgb(var(--white));
+      background-color: rgb(var(--background)) ;
       opacity: 1;
       mix-blend-mode: difference;
     }
 
     .cursor-follower.active {
-      transform: scale(2);
+      background-color: transparent;
+      border: 1px solid rgb(var(--white));
+      transform: scale(3);
     }
   }
 </style>
