@@ -1,5 +1,6 @@
 ---
 import Ornament from "@/components/Ornament.astro";
+import Hero from "@/icons/hero.astro";
 ---
 
 <section id="hero" class="container">
@@ -21,7 +22,7 @@ import Ornament from "@/components/Ornament.astro";
     </div>
   </div>
   <div class="hero-img">
-    <img src="/images/hero.png" alt="amrna hero image" />
+    <Hero />
     <Ornament x={85} size={6} y={15} gap=".5rem" cols={8} count={56} />
     <Ornament
       color="--primary"
@@ -52,11 +53,6 @@ import Ornament from "@/components/Ornament.astro";
     flex: 0.4;
     position: relative;
   }
-
-  .hero-img > img {
-    width: 100%;
-  }
-
   .content {
     flex: 0.6;
   }
@@ -99,6 +95,11 @@ import Ornament from "@/components/Ornament.astro";
 </style>
 
 <style is:global>
+  .hero-img > svg {
+    width: 100%;
+    height: auto;
+  }
+
   .hero-img:hover .ornament:nth-of-type(1) {
     gap: 0.45em;
     left: 80%;

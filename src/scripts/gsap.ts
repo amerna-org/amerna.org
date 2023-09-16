@@ -26,6 +26,13 @@ gsap.from(".hero-img", {
   y: 100,
 });
 
+gsap.from("#hero .hero-img svg path", {
+  opacity: 0,
+  stagger: .05,
+  yPercent: 100,
+  duration: 1,
+});
+
 ScrollTrigger.defaults({
   start: "top 75%",
   end: "bottom 75%",
@@ -278,15 +285,24 @@ const footerTl = () => {
         x: 50,
       },
       "-=1.5",
-    ).from("#contact #socials li", {
-      opacity: 0,
-      xPercent: 100,
-      stagger: 0.25,
-    }, "-=1")
-    .from("#contact form > *", {
-      opacity: 0,
-      stagger: 0.5,
-    }, "-=1");
+    )
+    .from(
+      "#contact #socials li",
+      {
+        opacity: 0,
+        xPercent: 100,
+        stagger: 0.25,
+      },
+      "-=1",
+    )
+    .from(
+      "#contact form > *",
+      {
+        opacity: 0,
+        stagger: 0.5,
+      },
+      "-=1",
+    );
 };
 
 const masterTl = gsap.timeline();
