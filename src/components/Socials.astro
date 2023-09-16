@@ -1,0 +1,70 @@
+---
+import LinkedIn from "@/icons/linkedin.astro";
+import Instagram from "@/icons/instagram.astro";
+import Facebook from "@/icons/facebook.astro";
+import Whatsapp from "@/icons/whatsapp.astro";
+import Email from "@/icons/email.astro";
+import X from "@/icons/x.astro";
+
+const socials = [
+  {
+    Icon: LinkedIn,
+    href: "#",
+  },
+  {
+    Icon: Instagram,
+    href: "#",
+  },
+  {
+    Icon: Facebook,
+    href: "#",
+  },
+  {
+    Icon: Whatsapp,
+    href: "#",
+  },
+  {
+    Icon: Email,
+    href: "#",
+  },
+  {
+    Icon: X,
+    href: "#",
+  },
+];
+---
+
+<ul id="socials">
+  {
+    socials.map(({ Icon, href }) => (
+      <li>
+        <a href={href}>
+          <Icon />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  #socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 1rem;
+  }
+</style>
+
+<style is:global>
+  #socials li svg {
+    width: 1.5rem;
+  }
+
+  #socials li path {
+    fill: rgb(var(--background));
+  }
+
+  #socials li a:hover path {
+    fill: rgb(var(--secondary));
+  }
+</style>

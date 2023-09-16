@@ -1,7 +1,11 @@
+---
+import Ornament from "@/components/Ornament.astro";
+---
+
 <section id="hero" class="container">
   <div class="content">
     <h1 class="hero-txt">
-      <span>أمرنا</span> نبني لك مشروعك من الفكرة الى النتفيذ!
+      <span>أمرنا</span> نبني لك مشروعك من الفكرة الى التنفيذ!
     </h1>
     <p class="hero-txt">
       هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا،
@@ -17,7 +21,17 @@
     </div>
   </div>
   <div class="hero-img">
-    <img src="/images/hero.png" alt="" />
+    <img src="/images/hero.png" alt="amrna hero image" />
+    <Ornament x={85} size={6} y={15} gap=".5rem" cols={8} count={56} />
+    <Ornament
+      color="--primary"
+      x={20}
+      size={6}
+      y={95}
+      gap=".5rem"
+      cols={8}
+      count={40}
+    />
   </div>
 </section>
 
@@ -26,7 +40,7 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 
-  section {
+  section#hero {
     margin-top: var(--header-height);
     display: flex;
     align-items: center;
@@ -36,6 +50,7 @@
 
   .hero-img {
     flex: 0.4;
+    position: relative;
   }
 
   .hero-img > img {
@@ -80,5 +95,18 @@
     section .image {
       max-width: 40ch;
     }
+  }
+</style>
+
+<style is:global>
+  .hero-img:hover .ornament:nth-of-type(1) {
+    gap: 0.45em;
+    left: 80%;
+    top: 20%;
+  }
+  .hero-img:hover .ornament:nth-of-type(2) {
+    gap: 0.45em;
+    left: 25%;
+    top: 90%;
   }
 </style>

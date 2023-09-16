@@ -51,120 +51,248 @@ const titleVars: gsap.TweenVars = {
   y: 100,
 };
 
-const howTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#how",
-  },
-});
+const howTl = () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#how",
+    },
+  });
 
-howTl
-  .from("#how h2", titleVars)
-  .from(
-    "#how #step-1",
-    {
-      x: 100,
-      opacity: 0,
-    },
-    "-=1.5",
-  )
-  .from(
-    "#how #step-1 .arrow",
-    {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      opacity: 0,
-    },
-    "-=1.5",
-  )
-  .from(
-    "#how #step-2",
-    {
-      x: -100,
-      opacity: 0,
-    },
-    "<",
-  )
-  .from(
-    "#how #step-2 .arrow",
-    {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      opacity: 0,
-    },
-    "-=1",
-  )
-  .from(
-    "#how #step-3",
-    {
-      x: 100,
-      opacity: 0,
-    },
-    "<",
-  );
-
-const aboutTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#about",
-  },
-});
-
-aboutTl.from("#about h2", titleVars).from(
-  "#about .card",
-  {
-    y: 100,
-    opacity: 0,
-  },
-  "-=1.5",
-);
-const projWrapper = document.getElementById("projects");
-const projects = document.querySelector("#projects > .projects");
-const getAmountToScroll = () => {
-
-  const container = document.querySelector(".container");
-  const containerStyle = window.getComputedStyle(container);
-  const containerPad = parseInt(containerStyle.paddingInline) * 2;
-  return projects?.offsetWidth - projWrapper?.offsetWidth + containerPad;
+  return tl
+    .from("#how h2", titleVars)
+    .from(
+      "#how #step-1",
+      {
+        x: 100,
+        opacity: 0,
+      },
+      "-=1.5",
+    )
+    .from(
+      "#how #step-1 svg",
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      "-=1.5",
+    )
+    .from(
+      "#how #step-1 h3",
+      {
+        opacity: 0,
+        y: 40,
+      },
+      "<",
+    )
+    .from(
+      "#how #step-1 .arrow",
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        opacity: 0,
+      },
+      "-=1.5",
+    )
+    .from(
+      "#how #step-2",
+      {
+        x: -100,
+        opacity: 0,
+      },
+      "<",
+    )
+    .from(
+      "#how #step-2 svg",
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      "-=1.5",
+    )
+    .from(
+      "#how #step-2 h3",
+      {
+        opacity: 0,
+        y: 40,
+      },
+      "<",
+    )
+    .from(
+      "#how #step-2 .arrow",
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        opacity: 0,
+      },
+      "-=1",
+    )
+    .from(
+      "#how #step-3",
+      {
+        x: 100,
+        opacity: 0,
+      },
+      "-=1",
+    )
+    .from(
+      "#how #step-3 svg",
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      "-=1.5",
+    )
+    .from(
+      "#how #step-3 h3",
+      {
+        opacity: 0,
+        y: 40,
+      },
+      "<",
+    );
 };
 
-const projTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: projWrapper,
-    end: () => `+=${getAmountToScroll()}`,
-    invalidateOnRefresh: true,
-  },
-});
+const aboutTl = () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#about",
+    },
+  });
 
-projTl
-  .fromTo("#projects h2", titleVars, {
-    opacity: 1,
-    y: 0,
-  })
-  .fromTo(
-    "#projects > .projects li",
+  return tl.from("#about h2", titleVars).from(
+    "#about .card",
     {
+      y: 100,
       opacity: 0,
-      x: -100,
     },
-    {
-      opacity: 1,
-      stagger: 0.5,
-      x: 0,
-    },
-    "<",
+    "-=1.5",
   );
+};
 
-ScrollTrigger.create({
-  trigger: projWrapper,
-  start: `top ${document.getElementById("header")?.offsetHeight}`,
-  end: () => `+=${getAmountToScroll() * 1.5}`,
-  pin: true,
-  invalidateOnRefresh: true,
-  animation: gsap.fromTo(
-    projects,
-    {
-      x: 0,
+const projectsTl = () => {
+  const projWrapper = document.getElementById("projects");
+  const projects = document.querySelector("#projects > .projects");
+
+  const getAmountToScroll = () => {
+    const containerPad = gsap.getProperty(".container", "padding-inline") * 2;
+    return projects?.offsetWidth - projWrapper?.offsetWidth + containerPad;
+  };
+
+  ScrollTrigger.create({
+    trigger: projWrapper,
+    start: `top ${document.getElementById("header")?.offsetHeight}`,
+    end: () => `+=${getAmountToScroll() * 1.5}`,
+    pin: true,
+    invalidateOnRefresh: true,
+    animation: gsap.fromTo(
+      projects,
+      {
+        x: 0,
+      },
+      {
+        x: getAmountToScroll,
+        ease: "none",
+      },
+    ),
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: projWrapper,
+      end: () => `+=${getAmountToScroll()}`,
+      invalidateOnRefresh: true,
     },
-    {
-      x: getAmountToScroll,
-      ease: "none",
+  });
+
+  return tl
+    .fromTo("#projects h2", titleVars, {
+      opacity: 1,
+      y: 0,
+    })
+    .fromTo(
+      "#projects > .projects li",
+      {
+        opacity: 0,
+        x: -100,
+      },
+      {
+        opacity: 1,
+        stagger: 0.5,
+        x: 0,
+      },
+      "<",
+    );
+};
+
+const servicesTl = () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#services",
     },
-  ),
-});
+  });
+
+  return tl
+    .from("#services h2", titleVars)
+    .from(
+      "#services .services .card",
+      {
+        y: 100,
+        opacity: 0,
+        stagger: 1,
+      },
+      "-=1",
+    )
+    .from(
+      "#services svg",
+      {
+        opacity: 0,
+        scale: 0,
+        stagger: 1,
+      },
+      "<",
+    )
+    .from(
+      "#services h3",
+      {
+        opacity: 0,
+        y: 40,
+        stagger: 1,
+      },
+      "-=1.75",
+    );
+};
+
+const footerTl = () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact",
+      end: "bottom bottom",
+    },
+  });
+
+  return tl
+    .from("#contact h2", titleVars)
+    .from(
+      "#contact .contact .logo, #contact .contact p",
+      {
+        opacity: 0,
+        stagger: 0.5,
+        x: 50,
+      },
+      "-=1.5",
+    ).from("#contact #socials li", {
+      opacity: 0,
+      xPercent: 100,
+      stagger: 0.25,
+    }, "-=1")
+    .from("#contact form > *", {
+      opacity: 0,
+      stagger: 0.5,
+    }, "-=1");
+};
+
+const masterTl = gsap.timeline();
+masterTl
+  .add(howTl())
+  .add(aboutTl())
+  .add(projectsTl())
+  .add(servicesTl())
+  .add(footerTl());

@@ -2,6 +2,7 @@
 import Wave from "@/components/Wave.astro";
 import Form from "@/components/Form.astro";
 import Logo from "@/components/Logo.astro";
+import Socials from "@/components/Socials.astro";
 ---
 
 <footer id="contact">
@@ -13,10 +14,16 @@ import Logo from "@/components/Logo.astro";
     <div class="contact">
       <div>
         <Logo />
-        <p>هل أنت مستعد لتحقيق فكرتك؟ إتصل بنا الأن للبدء!</p>
+        <p class="slogan">هل أنت مستعد لتحقيق فكرتك؟ إتصل بنا الأن للبدء!</p>
+        <Socials />
       </div>
       <Form />
     </div>
+    <p dir="rtl" class="copyright">
+      &copy; Amrna | Website by <a href="https://mah.codes" target="_blank"
+        >MAHcodes</a
+      > - {new Date().getFullYear()}
+    </p>
   </div>
 </footer>
 
@@ -26,15 +33,37 @@ import Logo from "@/components/Logo.astro";
     color: rgb(var(--white));
     position: relative;
     padding-block: 3rem;
+    max-width: 100%;
+  }
+
+  #contact .slogan {
+    padding-block: 1rem;
+  }
+
+  #contact .copyright {
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    text-align: center;
+    color: rgba(var(--background), 80%);
+    font-size: var(--fz-sm);
+  }
+
+  #contact .copyright a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  #contact .copyright a:hover {
+    color: rgba(var(--background), 100%);
   }
 
   .contact {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   @media only screen and (min-width: 650px) {
     .contact {
-      grid-template-columns: 1fr 1fr ;
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

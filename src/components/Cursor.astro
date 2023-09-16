@@ -64,7 +64,7 @@
 
   document.addEventListener("mousemove", handleMouseMove);
 
-  document.querySelectorAll("a").forEach(function (link) {
+  document.querySelectorAll("a, input[type='submit']").forEach(function (link) {
     link.addEventListener("mouseenter", handleLinkMouseEnter);
     link.addEventListener("mouseleave", handleLinkMouseLeave);
   });
