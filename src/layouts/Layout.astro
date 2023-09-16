@@ -5,7 +5,8 @@ import Overlay from "@/components/Overlay.astro";
 import Cursor from "@/components/Cursor.astro";
 import "@/styles/normalize.css";
 import "@/styles/global.css";
-// import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import { SEO } from "astro-seo";
 
 interface Props {}
 ---
@@ -14,22 +15,52 @@ interface Props {}
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#3D2EE0" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-    <!-- <GoogleFontsOptimizer
+    <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
-    /> -->
-    <title>Amrna | أمرنا</title>
+    />
+    <SEO
+      title="Amrna | أمرنا نبني لك مشروعك من الفكرة الى التنفيذ!"
+      description="هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!"
+      openGraph={{
+        basic: {
+          title: "Amrna | أمرنا نبني لك مشروعك من الفكرة الى التنفيذ!",
+          type: "website",
+          image: "/images/preview.png",
+        },
+      }}
+      twitter={{
+        creator: "@MAHcodes",
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/icons/favicon.svg" }],
+        meta: [
+          { name: "twitter:image", content: "/images/preview.png" },
+          {
+            name: "twitter:title",
+            content: "Amrna | أمرنا نبني لك مشروعك من الفكرة الى التنفيذ!",
+          },
+          {
+            name: "twitter:description",
+            content:
+              "هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!",
+          },
+        ],
+      }}
+    />
   </head>
   <body>
+    <!-- 
+      This Website was designed 
+    -->
     <Cursor />
     <Overlay />
     <Header />
     <slot />
     <Footer />
-<!--
+    <!--
     <script
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
