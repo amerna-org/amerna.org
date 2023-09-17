@@ -23,12 +23,12 @@ gsap.from("#header .btn, .hero-btn", {
 gsap.from(".hero-img", {
   ease: Power4.easeOut,
   opacity: 0,
-  y: 100,
+  yPercent: 100,
 });
 
 gsap.from("#hero .hero-img svg path", {
   opacity: 0,
-  stagger: .05,
+  stagger: .08,
   yPercent: 100,
   duration: 1,
 });
