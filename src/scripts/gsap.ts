@@ -91,11 +91,15 @@ const howTl = () => {
       },
       "<",
     )
-    .from(
+    .fromTo(
       "#how #step-1 .arrow",
       {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         opacity: 0,
+      },
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
       },
       "-=1.5",
     )
@@ -123,11 +127,15 @@ const howTl = () => {
       },
       "<",
     )
-    .from(
+    .fromTo(
       "#how #step-2 .arrow",
       {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         opacity: 0,
+      },
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
       },
       "-=1",
     )
