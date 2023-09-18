@@ -2,7 +2,9 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const lenis = new Lenis();
+const lenis = new Lenis({
+
+});
 
 lenis.on("scroll", ScrollTrigger.update);
 
