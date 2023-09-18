@@ -28,7 +28,7 @@ gsap.from(".hero-img", {
 
 gsap.from("#hero .hero-img svg path", {
   opacity: 0,
-  stagger: .08,
+  stagger: 0.08,
   yPercent: 100,
   duration: 1,
 });
@@ -183,58 +183,25 @@ const aboutTl = () => {
 };
 
 const projectsTl = () => {
-  const projWrapper = document.getElementById("projects");
-  const projects = document.querySelector("#projects > .projects");
-
-  const getAmountToScroll = () => {
-    const containerPad = gsap.getProperty(".container", "padding-inline") * 2;
-    return projects?.offsetWidth - projWrapper?.offsetWidth + containerPad;
-  };
-
-  ScrollTrigger.create({
-    trigger: projWrapper,
-    start: `top ${document.getElementById("header")?.offsetHeight}`,
-    end: () => `+=${getAmountToScroll() * 1.5}`,
-    pin: true,
-    invalidateOnRefresh: true,
-    animation: gsap.fromTo(
-      projects,
-      {
-        x: 0,
-      },
-      {
-        x: getAmountToScroll,
-        ease: "none",
-      },
-    ),
-  });
-
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: projWrapper,
-      end: () => `+=${getAmountToScroll()}`,
-      invalidateOnRefresh: true,
+      trigger: "#projects",
     },
   });
 
-  return tl
-    .fromTo("#projects h2", titleVars, {
+  return tl.from("#projects h2", titleVars).fromTo(
+    "#projects .projects li",
+    {
+      xPercent: -25,
+      opacity: 0,
+    },
+    {
+      xPercent: 0,
       opacity: 1,
-      y: 0,
-    })
-    .fromTo(
-      "#projects > .projects li",
-      {
-        opacity: 0,
-        x: -100,
-      },
-      {
-        opacity: 1,
-        stagger: 0.5,
-        x: 0,
-      },
-      "<",
-    );
+      stagger: 0.75,
+    },
+    "-=1.5"
+  );
 };
 
 const servicesTl = () => {

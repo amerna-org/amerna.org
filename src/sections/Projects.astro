@@ -56,7 +56,7 @@ const projects = [
     position: relative;
     overflow: hidden;
     border-radius: var(--br-md);
-    height: 17rem;
+    height: 15rem;
   }
 
   li a:hover::before {
@@ -72,3 +72,74 @@ const projects = [
     z-index: 100;
   }
 </style>
+
+<script>
+  const projectsContainer = document.getElementById("projects");
+  const projects = document.querySelector("#projects .projects");
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let maxScrollWidth;
+
+  projects.addEventListener("mousedown", dragStart);
+  projects.addEventListener("touchstart", dragStart);
+  projects.addEventListener("mouseup", dragEnd);
+  projects.addEventListener("touchend", dragEnd);
+  projects.addEventListener("mousemove", drag);
+  projects.addEventListener("touchmove", drag);
+  projects.addEventListener("mouseenter", () => isDragging = false);
+
+  const calculateMaximumScrollWidth = () => {
+    const projectsContainerPad = window .getComputedStyle(projectsContainer, null) .getPropertyValue("padding-inline");
+    maxScrollWidth = projects.offsetWidth - (projectsContainer?.offsetWidth - parseInt(projectsContainerPad) * 2);
+  }
+
+  window.addEventListener("resize", calculateMaximumScrollWidth);
+
+  function dragStart(event) {
+    event.preventDefault();
+    startPos = getPositionX(event);
+    isDragging = true;
+
+    requestAnimationFrame(animation);
+  }
+
+  function dragEnd() {
+    isDragging = false;
+    startPos = 0;
+    prevTranslate = currentTranslate;
+  }
+
+  function drag(event) {
+    if (isDragging) {
+      const currentPosition = getPositionX(event);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+      console.log({ currentTranslate });
+
+      if (currentTranslate > maxScrollWidth) {
+        currentTranslate = maxScrollWidth;
+      }
+      if (currentTranslate < 0) {
+        currentTranslate = 0;
+      }
+    }
+  }
+
+  function getPositionX(event) {
+    return event.type.includes("mouse")
+      ? event.pageX
+      : event.touches[0].clientX;
+  }
+
+  function animation() {
+    setTranslateX();
+    if (isDragging) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function setTranslateX() {
+    projects.style.transform = `translateX(${currentTranslate}px)`;
+  }
+</script>
