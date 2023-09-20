@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/sections/Hero.astro";
 import How from "@/sections/How.astro";
 import Services from "@/sections/Services.astro";
-import Projects from "@/sections/Projects.astro";
+import Projects from "@/sections/Projects.tsx";
 import About from "@/sections/About.astro";
 ---
 
@@ -12,7 +12,7 @@ import About from "@/sections/About.astro";
     <Hero />
     <How />
     <About />
-    <Projects />
+    <Projects client:only="react"/>
     <Services />
   </main>
 </Layout>

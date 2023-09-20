@@ -198,7 +198,6 @@ const projectsTl = () => {
     {
       xPercent: 0,
       opacity: 1,
-      stagger: 0.75,
     },
     "-=1.5"
   );
@@ -284,6 +283,6 @@ const masterTl = gsap.timeline();
 masterTl
   .add(howTl())
   .add(aboutTl())
-  .add(projectsTl())
+  // .add(projectsTl())
   .add(servicesTl())
   .add(footerTl());

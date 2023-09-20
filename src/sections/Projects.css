@@ -1,0 +1,109 @@
+#projects {
+  overflow: hidden;
+}
+
+.projects {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.projects li {
+  min-width: 100%;
+}
+
+.projects a {
+  display: block;
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  border-radius: var(--br-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.projects a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects li a:hover::before {
+  content: "";
+  background-image: url("/icons/open.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 40%);
+  background-size: 2rem;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: var(--br-md);
+  z-index: 100;
+}
+
+#projects .buttons-wrapper {
+  position: relative;
+}
+
+#projects .prev,
+#projects .next {
+  position: absolute;
+  z-index: 102;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 2px solid rgb(var(--primary));
+  background-color: rgb(var(--background));
+  transition: background-color var(--tr-duration) var(--tr-tr-fn);
+}
+
+#projects .prev svg path,
+#projects .next svg path {
+  stroke: rgb(var(--primary));
+  transition: stroke var(--tr-duration) var(--tr-tr-fn);
+}
+
+#projects .prev:hover,
+#projects .next:hover {
+  background-color: rgb(var(--primary));
+  border-color: rgb(var(--background));
+}
+
+#projects .prev:hover svg path,
+#projects .next:hover svg path {
+  stroke: rgb(var(--background));
+}
+
+#projects .prev {
+  inset: 50% auto auto 0;
+  transform: translate(-25%, -50%) rotate(90deg);
+}
+
+#projects .next {
+  inset: 50% 0 auto auto;
+  transform: translate(25%, -50%) rotate(-90deg);
+}
+
+#projects .dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#projects .dots .dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid rgb(var(--primary));
+  cursor: pointer;
+  transition: background-color var(--tr-duration) var(--tr-tr-fn);
+}
+
+#projects .dots .dot.active {
+  background-color: rgb(var(--primary));
+}
