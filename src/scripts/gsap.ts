@@ -182,27 +182,6 @@ const aboutTl = () => {
   );
 };
 
-const projectsTl = () => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#projects",
-    },
-  });
-
-  return tl.from("#projects h2", titleVars).fromTo(
-    "#projects .projects li",
-    {
-      xPercent: -25,
-      opacity: 0,
-    },
-    {
-      xPercent: 0,
-      opacity: 1,
-    },
-    "-=1.5"
-  );
-};
-
 const servicesTl = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -283,6 +262,5 @@ const masterTl = gsap.timeline();
 masterTl
   .add(howTl())
   .add(aboutTl())
-  // .add(projectsTl())
   .add(servicesTl())
   .add(footerTl());
