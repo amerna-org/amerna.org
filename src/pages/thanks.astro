@@ -1,0 +1,30 @@
+---
+import Logo from "@/components/Logo.astro";
+import Socials from "@/components/Socials.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="container">
+    <div>
+      <Logo />
+      <p>تم استلام الطلب. سنتواصل معك في غضون 24 ساعة...</p>
+      <a class="btn primary shadow md" href="/">الرئيسية</a>
+      <Socials fill="primary" hover="text" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  div {
+    padding: 1rem;
+  }
+
+  div p {
+    margin-block: 1.5rem;
+  }
+
+  div a {
+    margin-bottom: 1rem;
+  }
+</style>

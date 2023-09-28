@@ -4,7 +4,7 @@ import "./Projects.css";
 const projects = [
   {
     img: "/images/proj1.png",
-    href: "https://canadiansouq.com",
+    href: "#",
   },
   {
     img: "/images/proj2.png",
@@ -84,7 +84,7 @@ const Projects = () => {
       </div>
       <div className="dots">
         {Array.from(Array(projects.length)).map((_, idx) => (
-          <button onClick={() => setCurrentProj(idx)} className={`dot ${currentProj === idx ? "active" : ""}`} />
+          <button key={idx} onClick={() => setCurrentProj(idx)} className={`dot ${currentProj === idx ? "active" : ""}`} />
         ))}
       </div>
     </section>
