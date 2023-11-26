@@ -23,11 +23,11 @@ interface Props {}
       url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
     />
     <SEO
-      title={t("site.title") || ""}
-      description="هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!"
+      title={t("site.title")!}
+      description={t("site.description")!}
       openGraph={{
         basic: {
-          title: "Amerna | آمرنا نبني لك مشروعك من الفكرة الى التنفيذ!",
+          title: t("site.title"),
           type: "website",
           image: "/images/preview.png",
         },
@@ -41,12 +41,11 @@ interface Props {}
           { name: "twitter:image", content: "/images/preview.png" },
           {
             name: "twitter:title",
-            content: "Amerna | آمرنا نبني لك مشروعك من الفكرة الى التنفيذ!",
+            content: t("site.title")!,
           },
           {
             name: "twitter:description",
-            content:
-              "هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!",
+            content: t("site.description")!,
           },
         ],
       }}
