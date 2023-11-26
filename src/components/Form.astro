@@ -1,11 +1,12 @@
 ---
-import { t } from "i18next";
+import i18next, { t } from "i18next";
+const route = i18next.language === "en" ? "/en" : i18next.language === "tr" ? "/tr" : "";
 ---
 
 <form action="https://formsubmit.co/support@amerna.org" method="POST">
   <input type="hidden" name="_captcha" value="false" />
   <input type="hidden" name="_template" value="box" />
-  <input type="hidden" name="_next" value="https://amerna.org/thanks" />
+  <input type="hidden" name="_next" value={`https://amerna.org${route}/thanks`} />
 
   <label for="name">{t("footer.form.name")}</label>
   <input autocomplete="name" id="name" type="text" name="name" />

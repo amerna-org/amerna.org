@@ -7,11 +7,11 @@ const projects = [
     href: "#",
   },
   {
-    img: "/images/proj2.png",
+    img: "/images/proj1.png",
     href: "#",
   },
   {
-    img: "/images/proj3.png",
+    img: "/images/proj1.png",
     href: "#",
   },
 ];

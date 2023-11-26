@@ -1,0 +1,27 @@
+---
+import { t, changeLanguage } from "i18next";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/sections/Hero.astro";
+import How from "@/sections/How.astro";
+import Services from "@/sections/Services.astro";
+import Projects from "@/sections/Projects.tsx";
+import About from "@/sections/About.astro";
+import Header from "@/components/Header/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+changeLanguage("tr");
+---
+
+<Layout>
+  <main>
+    <Header />
+    <Hero />
+    <How />
+    <About />
+    <Projects client:only="react">
+      <h2>{t("projects.title")}</h2>
+    </Projects>
+    <Services />
+    <Footer />
+  </main>
+</Layout>

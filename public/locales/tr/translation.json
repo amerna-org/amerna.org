@@ -1,0 +1,67 @@
+{
+  "site": {
+    "title": "Amerna - Projenizi fikirden uygulamaya taşıyoruz!",
+    "description": "Bir proje fikriniz var ancak bunu gerçekleştirecek uzmanlığa ve kaynaklara mı ihtiyacınız var? Amerna'da, fikirlerinizi başarıyla hayata geçirmek için ihtiyacınız olan desteği sağlıyoruz!"
+  },
+  "header": {
+    "logo": "Amerna",
+    "cta": "Bize ulaşın",
+    "nav": {
+      "home": "Anasayfa",
+      "how": "Nasıl",
+      "who": "Kim",
+      "projects": "Projeler",
+      "services": "Servisler"
+    }
+  },
+  "hero": {
+    "title": "<0>Amerna</0> - Projenizi fikirden uygulamaya taşıyoruz!",
+    "description": "Bir proje fikriniz var ancak bunu gerçekleştirecek uzmanlığa ve kaynaklara mı ihtiyacınız var? Amerna'da, fikirlerinizi başarıyla hayata geçirmek için ihtiyacınız olan desteği sağlıyoruz!",
+    "cta": "Şimdi projenizi talep edin!",
+    "cta2": "Hizmetlerimiz hakkında bilgi edinin"
+  },
+  "how": {
+    "title": "Amerna nasıl çalışır?",
+    "step1": {
+      "title": "Fikrinizi gönderin"
+    },
+    "step2": {
+      "title": "Projenizi biz inşa ediyoruz"
+    },
+    "step3": {
+      "title": "Projenizi size teslim ediyoruz"
+    }
+  },
+  "about": {
+    "title": "Kimiz",
+    "description": "Amerna, fikirleri gerçek projelere dönüştürmeye odaklanan bir platformdur. Misyonumuz, proje fikirleri olan ancak kendilerine uygun uzmanları bulmakta zorluk çeken kişiler için piyasadaki boşluğu doldurmaktır. Fikirlerinizi başarıyla hayata geçirmeniz için yol boyunca her adımda size yardımcı olacak çeşitli hizmetler sunuyoruz. Müşterilerimiz için her zaman en iyi değeri sağlamaya çalışıyoruz. Fırsatı kaçırmayın. Projenizin başarısını elde etmek için bugün bizimle yolculuğunuza başlayın!"
+  },
+  "projects": {
+    "title": "Seçilen Projeler"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "web": "Web geliştirme",
+    "security": "Siber güvenlik hizmetleri",
+    "dev": "Yazılım geliştirme"
+  },
+  "footer": {
+    "title": "Yazılım hizmetleri",
+    "slogan": "Fikrinizi hayata geçirmeye hazır mısınız? Başlamak için hemen bize ulaşın!",
+    "form": {
+      "name": "Ad Soyad *",
+      "email": "E-posta *",
+      "phone": "Telefon numarası *",
+      "service": {
+        "title": "Hizmet türü *",
+        "web": "Web sitesi geliştirme",
+        "security": "Siber güvenlik hizmetleri",
+        "dev": "Yazılım geliştirme",
+        "other": "Diğer"
+      },
+      "message": "Proje özeti *",
+      "action": "Gönder"
+    }
+  },
+  "thanks": "Talep alındı. 24 saat içinde sizinle iletişime geçeceğiz..."
+}
