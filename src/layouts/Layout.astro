@@ -5,22 +5,25 @@ import "@/styles/normalize.css";
 import "@/styles/global.css";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { SEO } from "astro-seo";
+import i18next, { t } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 
 interface Props {}
 ---
 
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang={i18next.language} dir={i18next.language === "ar" ? "rtl" : "ltr"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#3D2EE0" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <HeadHrefLangs />
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
     />
     <SEO
-      title="Amerna | آمرنا نبني لك مشروعك من الفكرة الى التنفيذ!"
+      title={t("site.title") || ""}
       description="هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في أمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!"
       openGraph={{
         basic: {
@@ -50,11 +53,6 @@ interface Props {}
     />
   </head>
   <body>
-    <!-- 
-      This Website was designed and developed
-      by Amerna, you can find me on instagram:
-      https://www.instagram.com/amerna.official/
-    -->
     <Cursor />
     <Overlay />
     <slot />

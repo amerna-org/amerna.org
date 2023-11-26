@@ -2,25 +2,26 @@
 import Web from "@/icons/web.astro";
 import Security from "@/icons/security.astro";
 import Dev from "@/icons/dev.astro";
+import { t } from "i18next"
 
 const services = [
   {
     Icon: Web,
-    title: "بناء وتطوير مواقع",
+    title: t("services.web"),
   },
   {
     Icon: Security,
-    title: "خدمات الامن السيبراني",
+    title: t("services.security"),
   },
   {
     Icon: Dev,
-    title: "خدمات برمجية",
+    title: t("services.dev"),
   },
 ];
 ---
 
 <section id="services" class="container">
-  <h2>خدماتنا</h2>
+  <h2>{t("services.title")}</h2>
   <ul class="services">
     {
       services.map(({ Icon, title }) => (

@@ -2,6 +2,8 @@
 import Nav from "./Nav.astro";
 import Logo from "../Logo.astro";
 import Hamburger from "./Hamburger.astro";
+import LangSelector from "./LangSelector.astro";
+import { t } from "i18next";
 ---
 
 <header id="header" class="card">
@@ -9,8 +11,9 @@ import Hamburger from "./Hamburger.astro";
     <Logo />
   </a>
   <Nav />
-  <a href="#contact" class="cta btn md primary shadow">اطلب مشروعك</a>
+  <a href="#contact" class="cta btn md primary shadow">{t("header.cta")}</a>
   <Hamburger active={false} />
+  <LangSelector />
 </header>
 
 <style>
@@ -27,6 +30,7 @@ import Hamburger from "./Hamburger.astro";
       "logo cta menu"
       "nav nav nav";
     grid-auto-columns: 1fr 1fr auto;
+    gap: 0.5rem;
     z-index: 1000;
   }
 
@@ -51,8 +55,8 @@ import Hamburger from "./Hamburger.astro";
 
   @media only screen and (min-width: 675px) {
     header {
-      grid-template-areas: "logo nav cta";
-      grid-auto-columns: unset;
+      grid-template-areas: "logo nav lang cta";
+      grid-auto-columns: auto 1fr auto auto;
       padding-block: 0.25rem;
     }
   }

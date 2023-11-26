@@ -1,28 +1,31 @@
 ---
 import Ornament from "@/components/Ornament.astro";
-import Hero from "@/icons/hero.astro";
+import HeroIcon from "@/icons/hero.astro";
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 ---
 
 <section id="hero" class="container">
   <div class="content">
     <h1 class="hero-txt">
-      <span>آمرنا</span> نبني لك مشروعك من الفكرة الى التنفيذ!
+      <Trans i18nKey="hero.title">
+        <span>آمرنا</span> نبني لك مشروعك من الفكرة الى التنفيذ!
+      </Trans>
     </h1>
     <p class="hero-txt">
-      هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في آمرنا،
-      نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!
+      {t("hero.description")}
     </p>
     <div class="btns">
       <a href="#contact" class="btn primary lg shadow hero-btn"
-        >اطلب مشروعك الآن!</a
+        >{t("hero.cta")}</a
       >
       <a href="#services" class="btn tertiary lg shadow hero-btn"
-        >تعرف على خدماتنا</a
+        >{t("hero.cta2")}</a
       >
     </div>
   </div>
   <div class="hero-img">
-    <Hero />
+    <HeroIcon />
     <Ornament x={85} size={6} y={15} gap=".5rem" cols={8} count={56} />
     <Ornament
       color="--primary"

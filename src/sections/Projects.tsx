@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import "./Projects.css";
 
 const projects = [
@@ -16,7 +16,11 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+interface IProjectsProps {
+  children: ReactNode;
+}
+
+const Projects = ({children}: IProjectsProps) => {
   const ulRef = useRef(null);
   const containerRef = useRef(null);
   const [currentProj, setCurrentProj] = useState(0);
@@ -47,7 +51,7 @@ const Projects = () => {
 
   return (
     <section id="projects" ref={containerRef} className="container">
-      <h2>مشاريع مختارة</h2>
+      {children}
       <div className="buttons-wrapper">
         <ul className="projects" ref={ulRef}>
           {projects.map(({ img, href }, idx) => (

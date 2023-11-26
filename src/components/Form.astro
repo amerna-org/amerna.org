@@ -1,30 +1,34 @@
+---
+import { t } from "i18next"
+---
+
 <form action="https://formsubmit.co/support@amerna.org" method="POST">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="box">
   <input type="hidden" name="_next" value="https://amerna.org/thanks">
 
-  <label for="name">الإسم *</label>
+  <label for="name">{t("footer.form.name")}</label>
   <input autocomplete="name" id="name" type="text" name="name" />
 
-  <label for="email">البريد اإلكتروني *</label>
+  <label for="email">{t("footer.form.email")}</label>
   <input autocomplete="email" id="email" type="email" name="email" />
-  <label for="email">رقم الهاتف *</label>
+  <label for="email">{t("footer.form.phone")}</label>
   <input autocomplete="phone" id="phone" type="tel" name="phone" />
 
-  <label for="service">نوع الخدمة *</label>
+  <label for="service">{t("footer.form.service.title")}</label>
   <div class="custom-select">
     <select name="service" id="service">
-      <option value="web">بناء وتطوير مواقع</option>
-      <option value="security">خدمات الامن السيبراني</option>
-      <option value="dev">خدمات برمجية</option>
-      <option value="other">أخر</option>
+      <option value="web">{t("footer.form.service.web")}</option>
+      <option value="security">{t("footer.form.service.security")}</option>
+      <option value="dev">{t("footer.form.service.dev")}</option>
+      <option value="other">{t("footer.form.service.other")}</option>
     </select>
   </div>
 
-  <label for="message">ملخص المشروع *</label>
+  <label for="message">{t("footer.form.message")}</label>
   <textarea name="message" id="message" rows="10"></textarea>
 
-  <input type="submit" class="btn primary shadow md" value="أرسل" />
+  <input type="submit" class="btn primary shadow md" value={t("footer.form.action")} />
 </form>
 
 <style>

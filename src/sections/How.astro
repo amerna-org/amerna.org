@@ -4,26 +4,27 @@ import Step2 from "@/icons/step2.astro";
 import Step3 from "@/icons/step3.astro";
 import Arrow from "@/icons/arrow.astro";
 import Ornament from "@/components/Ornament.astro";
+import { t } from "i18next";
 ---
 
 <section id="how" class="container">
-  <h2>كيف يعمل آمرنا</h2>
+  <h2>{t("how.title")}</h2>
   <ul class="steps">
     <li id="step-1" class="card with-icon">
       <Step1 />
-      <h3>قدم لنا فكرتك</h3>
+      <h3>{t("how.step1.title")}</h3>
       <Arrow />
       <Ornament x={100} y={0} size={6} gap=".5rem" cols={5} count={35} />
     </li>
     <li id="step-2" class="card with-icon">
       <Step2 />
-      <h3>نبني مشروعك</h3>
+      <h3>{t("how.step2.title")}</h3>
       <Arrow />
       <Ornament x={0} y={100} size={6} gap=".5rem" cols={5} count={35} />
     </li>
     <li id="step-3" class="card with-icon">
       <Step3 />
-      <h3>نسلمك مشروعك</h3>
+      <h3>{t("how.step3.title")}</h3>
       <Ornament x={100} y={100} size={6} gap=".5rem" cols={5} count={35} />
     </li>
   </ul>

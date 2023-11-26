@@ -1,24 +1,26 @@
 ---
+import { t } from "i18next";
+
 const pages = [
   {
     href: "#hero",
-    value: "الرئيسية",
+    key: "header.nav.home",
   },
   {
     href: "#how",
-    value: "كيف نعمل",
+    key: "header.nav.how",
   },
   {
     href: "#about",
-    value: "من نحن",
+    key: "header.nav.who",
   },
   {
     href: "#projects",
-    value: "مشاريع مختارة",
+    key: "header.nav.projects",
   },
   {
     href: "#services",
-    value: "خدماتنا",
+    key: "header.nav.services",
   },
 ];
 ---
@@ -34,9 +36,9 @@ const pages = [
 <nav id="nav">
   <ul>
     {
-      pages.map(({ href, value }) => (
+      pages.map(({ href, key }) => (
         <li>
-          <a href={href}>{value}</a>
+          <a href={href}>{t(key)}</a>
         </li>
       ))
     }

@@ -15,9 +15,10 @@ gsap.from(".hero-txt", {
   stagger: 0.5,
 });
 
-gsap.from("#header .btn, .hero-btn", {
+gsap.from("#header .btn, .hero-btn, .lang-select", {
   opacity: 0,
   delay: 1.25,
+  stagger: 0.15,
 });
 
 gsap.from(".hero-img", {

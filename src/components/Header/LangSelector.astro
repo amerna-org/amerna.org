@@ -1,0 +1,60 @@
+---
+import { LanguageSelector } from "astro-i18next/components";
+---
+
+<div class="custom-select lang-select">
+  <LanguageSelector
+    showFlag={false}
+    languageMapping={{ en: "English", ar: "Arabic" }}
+  />
+</div>
+
+<style>
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--fz-sm);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--br-sm);
+    border: 1px solid rgb(var(--dark));
+    background-color: rgb(var(--white));
+    padding: 0.675em 1em 0.675em 3em;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  select:focus {
+    border: 1px solid rgb(var(--secondary));
+  }
+
+  .custom-select {
+    position: relative;
+    width: fit-content;
+    grid-area: lang;
+  }
+
+  .custom-select::before,
+  .custom-select::after {
+    --size: 0.3rem;
+    content: "";
+    position: absolute;
+    left: 1rem;
+    pointer-events: none;
+  }
+
+  .custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgb(var(--text));
+    top: 40%;
+  }
+
+  .custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgb(var(--text));
+    top: 55%;
+  }
+</style>
