@@ -4,7 +4,9 @@ import Step2 from "@/icons/step2.astro";
 import Step3 from "@/icons/step3.astro";
 import Arrow from "@/icons/arrow.astro";
 import Ornament from "@/components/Ornament.astro";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
+
+const rtl = i18next.language === "ar";
 ---
 
 <section id="how" class="container">
@@ -13,19 +15,40 @@ import { t } from "i18next";
     <li id="step-1" class="card with-icon">
       <Step1 />
       <h3>{t("how.step1.title")}</h3>
-      <Arrow />
-      <Ornament x={100} y={0} size={6} gap=".5rem" cols={5} count={35} />
+      <Arrow rtl={rtl} />
+      <Ornament
+        x={rtl ? 100 : 0}
+        y={0}
+        size={6}
+        gap=".5rem"
+        cols={5}
+        count={35}
+      />
     </li>
     <li id="step-2" class="card with-icon">
       <Step2 />
       <h3>{t("how.step2.title")}</h3>
-      <Arrow />
-      <Ornament x={0} y={100} size={6} gap=".5rem" cols={5} count={35} />
+      <Arrow rtl={rtl} />
+      <Ornament
+        x={rtl ? 0 : 100}
+        y={100}
+        size={6}
+        gap=".5rem"
+        cols={5}
+        count={35}
+      />
     </li>
     <li id="step-3" class="card with-icon">
       <Step3 />
       <h3>{t("how.step3.title")}</h3>
-      <Ornament x={100} y={100} size={6} gap=".5rem" cols={5} count={35} />
+      <Ornament
+        x={rtl ? 100 : 0}
+        y={100}
+        size={6}
+        gap=".5rem"
+        cols={5}
+        count={35}
+      />
     </li>
   </ul>
 </section>
@@ -86,12 +109,26 @@ import { t } from "i18next";
     }
 
     .steps li:nth-child(odd) > .arrow {
+      right: -2rem;
+      left: unset;
+      transform: translate(100%, -2rem) rotateY(180deg);
+    }
+
+    .steps li:nth-child(odd) > .arrow.rtl {
       left: -2rem;
-      transform: translate(-100%, -2rem);
+      right: unset;
+      transform: translate(-100%, -2rem) rotateY(0deg);
     }
 
     .steps li:nth-child(even) > .arrow {
+      left: -2rem;
+      right: unset;
+      transform: translate(-100%, -2rem) rotateY(0deg);
+    }
+
+    .steps li:nth-child(even) > .arrow.rtl {
       right: -2rem;
+      left: unset;
       transform: translate(100%, -2rem) rotateY(180deg);
     }
   }

@@ -13,4 +13,4 @@ const setHeaderHeight = () => {
 };
 
 window.onresize = setHeaderHeight;
-document.addEventListener("DOMContentLoaded", setHeaderHeight)
+document.addEventListener("DOMContentLoaded", setHeaderHeight);

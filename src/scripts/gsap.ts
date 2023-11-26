@@ -260,8 +260,4 @@ const footerTl = () => {
 };
 
 const masterTl = gsap.timeline();
-masterTl
-  .add(howTl())
-  .add(aboutTl())
-  .add(servicesTl())
-  .add(footerTl());
+masterTl.add(howTl()).add(aboutTl()).add(servicesTl()).add(footerTl());

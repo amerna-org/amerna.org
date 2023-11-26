@@ -20,7 +20,7 @@ interface IProjectsProps {
   children: ReactNode;
 }
 
-const Projects = ({children}: IProjectsProps) => {
+const Projects = ({ children }: IProjectsProps) => {
   const ulRef = useRef(null);
   const containerRef = useRef(null);
   const [currentProj, setCurrentProj] = useState(0);
@@ -44,8 +44,9 @@ const Projects = ({children}: IProjectsProps) => {
       parseFloat(getComputedStyle(containerEl).paddingRight);
 
     if (ulRef.current) {
-      ulRef.current.style.transform = `translateX(${containerWidth * currentProj
-        }px)`;
+      ulRef.current.style.transform = `translateX(${
+        containerWidth * currentProj
+      }px)`;
     }
   }, [currentProj]);
 
@@ -88,7 +89,11 @@ const Projects = ({children}: IProjectsProps) => {
       </div>
       <div className="dots">
         {Array.from(Array(projects.length)).map((_, idx) => (
-          <button key={idx} onClick={() => setCurrentProj(idx)} className={`dot ${currentProj === idx ? "active" : ""}`} />
+          <button
+            key={idx}
+            onClick={() => setCurrentProj(idx)}
+            className={`dot ${currentProj === idx ? "active" : ""}`}
+          />
         ))}
       </div>
     </section>
