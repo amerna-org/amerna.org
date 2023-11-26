@@ -53,7 +53,7 @@ const { fill = "background", hover = "secondary" } = Astro.props;
   }
 </ul>
 
-<style define:vars={{ fill: `var(--${fill})`, hover: `var:(--${hover})` }}>
+<style define:vars={{ fill: `var(--${fill})`, hover: `var(--${hover})` }}>
   #socials {
     display: flex;
     align-items: center;
