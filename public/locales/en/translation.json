@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Amerna",
-    "description": "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    "title": "Amerna - We build your project from idea to execution!",
+    "description": "Do you have a project idea but you need the expertise and resources to make it happen? At Amerna, we provide you with the support you need to bring your ideas to life successfully!"
   },
   "header": {
     "logo": "Amerna",
-    "cta": "اطلب مشروعك",
+    "cta": "Contact us",
     "nav": {
       "home": "Home",
       "how": "How",
@@ -15,52 +15,52 @@
     }
   },
   "hero": {
-    "title": "<0>Amerna</0> نبني لك مشروعك من الفكرة الى التنفيذ!",
-    "description": "هل لديك فكرة مشروع ولكنك تحتاج إلى الخبرة والموارد لتحقيقها؟ في آمرنا، نقدم لك الدعم الذي تحتاجه لتحقيق أفكارك بنجاح!",
-    "cta": "اطلب مشروعك الآن!",
-    "cta2": "تعرف على خدماتنا"
+    "title": "<0>Amerna</0> - We build your project from idea to execution!",
+    "description": "Do you have a project idea but you need the expertise and resources to make it happen? At Amerna, we provide you with the support you need to bring your ideas to life successfully!",
+    "cta": "Request your project now!",
+    "cta2": "Learn about our services"
   },
   "how": {
-    "title": "كيف يعمل آمرنا",
+    "title": "How Amerna works",
     "step1": {
-      "title": "قدم لنا فكرتك"
+      "title": "Submit your idea"
     },
     "step2": {
-      "title": "نبني مشروعك"
+      "title": "We build your project"
     },
     "step3": {
-      "title": "نسلمك مشروعك"
+      "title": "We deliver your project"
     }
   },
   "about": {
-    "title": "من نحن",
-    "description": "آمرنا هي منصة مختصة بتحويل الأفكار إلى مشاريع حقيقية. مهمتنا هي ملء الفجوة في السوق للأشخاص الذين يمتلكون أفكارًا للمشاريع ولكن يجدون صعوبة في إيجاد الخبراء المناسبين لها، نحن نقدم مجموعة متنوعة من الخدمات لنساعدك في كل خطوة على الطريق إلى تحقيق أفكارك بنجاح، ونسعى دائمًا لتقديم أفضل قيمة لعملائنا، لا تفوت الفرصة، إبدأ رحلتك معنا لتحقيق نجاح مشروعك اليوم!"
+    "title": "Who we are",
+    "description": "Amerna is a platform that specializes in turning ideas into real projects. Our mission is to fill the gap in the market for people who have project ideas but find it difficult to find the right experts for them. We offer a variety of services to help you at every step along the way to successfully bringing your ideas to life. We always strive to provide the best value for our customers. Don't miss the opportunity. Start your journey with us today to achieve the success of your project!"
   },
   "projects": {
     "title": "Selected Projects"
   },
   "services": {
-    "title": "Services",
-    "web": "web",
-    "security": "security",
-    "dev": "dev"
+    "title": "Our services",
+    "web": "Web development",
+    "security": "Cybersecurity services",
+    "dev": "Software development"
   },
   "footer": {
-    "title": "خدمات برمجية",
-    "slogan": "هل أنت مستعد لتحقيق فكرتك؟ إتصل بنا الأن للبدء!",
+    "title": "Software services",
+    "slogan": "Are you ready to bring your idea to life? Contact us now to get started!",
     "form": {
-      "name": "الإسم *",
-      "email": "البريد اإلكتروني *",
-      "phone": "رقم الهاتف *",
+      "name": "Name *",
+      "email": "Email *",
+      "phone": "Phone number *",
       "service": {
-        "title": "نوع الخدمة *",
-        "web": "بناء وتطوير مواقع",
-        "security": "خدمات الامن السيبراني",
-        "dev": "خدمات برمجية",
-        "other": "أخر"
+        "title": "Service type *",
+        "web": "Website development",
+        "security": "Cybersecurity services",
+        "dev": "Software development",
+        "other": "Other"
       },
-      "message": "ملخص المشروع *",
-      "action": "أرسل"
+      "message": "Project summary *",
+      "action": "Send"
     }
   }
 }

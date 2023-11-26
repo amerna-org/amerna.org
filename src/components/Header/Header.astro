@@ -27,10 +27,10 @@ import { t } from "i18next";
     display: grid;
     align-items: center;
     grid-template-areas:
-      "logo cta menu"
-      "nav nav nav";
-    grid-auto-columns: 1fr 1fr auto;
-    gap: 0.5rem;
+      "logo cta lang menu"
+      "nav nav nav nav";
+    grid-auto-columns: auto;
+    gap: 0.75rem;
     z-index: 1000;
   }
 
@@ -42,13 +42,13 @@ import { t } from "i18next";
   @media only screen and (max-width: 320px) {
     header {
       grid-template-areas:
-        "logo menu"
+        "logo logo"
+        "lang menu"
         "nav nav"
         "cta cta";
     }
 
     .cta {
-      margin-top: 1rem;
       justify-self: stretch;
     }
   }
