@@ -3,11 +3,11 @@ import "./Projects.css";
 
 const projects = [
   {
-    img: "/images/proj1.png",
+    img: "https://amerna.org/images/proj1.png",
     href: "https://projects.amerna.org/canadiansouq",
   },
   {
-    img: "/images/proj2.png",
+    img: "https:amerna.org/images/proj2.png",
     href: "https://projects.amerna.org/xerolinux",
   },
 ];
