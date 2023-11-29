@@ -7,7 +7,7 @@ const projects = [
     href: "https://projects.amerna.org/canadiansouq",
   },
   {
-    img: "https:amerna.org/images/proj2.png",
+    img: "https://amerna.org/images/proj2.png",
     href: "https://projects.amerna.org/xerolinux",
   },
 ];
