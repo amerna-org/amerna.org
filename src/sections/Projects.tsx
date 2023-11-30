@@ -47,7 +47,7 @@ const Projects = ({ children }: IProjectsProps) => {
   }, [currentProj]);
 
   return (
-    <section id="projects" ref={containerRef} className="container">
+    <section dir="rtl" id="projects" ref={containerRef} className="container">
       {children}
       <div className="buttons-wrapper">
         <ul className="projects" ref={ulRef}>
