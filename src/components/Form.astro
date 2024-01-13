@@ -1,12 +1,27 @@
 ---
 import i18next, { t } from "i18next";
-const route = i18next.language === "en" ? "/en" : i18next.language === "tr" ? "/tr" : "";
+const route =
+  i18next.language === "en" ? "/en" : i18next.language === "tr" ? "/tr" : "";
 ---
 
 <form action="https://formsubmit.co/support@amerna.org" method="POST">
   <input type="hidden" name="_captcha" value="false" />
   <input type="hidden" name="_template" value="box" />
-  <input type="hidden" name="_next" value={`https://amerna.org${route}/thanks`} />
+  <input
+    type="hidden"
+    name="_next"
+    value={`https://amerna.org${route}/thanks`}
+  />
+
+  <div class="tabs">
+    <input hidden id="client-mode" name="mode" type="radio" checked />
+    <label for="client-mode" class="cta btn md shadow">طلب خدمة</label>
+
+    <input hidden id="freelancer-mode" name="mode" type="radio" />
+    <label for="freelancer-mode" class="cta btn md shadow"
+      >انضم للفريق</label
+    >
+  </div>
 
   <label for="name">{t("footer.form.name")}</label>
   <input autocomplete="name" id="name" type="text" name="name" />
@@ -22,6 +37,7 @@ const route = i18next.language === "en" ? "/en" : i18next.language === "tr" ? "/
       <option value="web">{t("footer.form.service.web")}</option>
       <option value="security">{t("footer.form.service.security")}</option>
       <option value="dev">{t("footer.form.service.dev")}</option>
+      <option value="apps">{t("footer.form.service.apps")}</option>
       <option value="other">{t("footer.form.service.other")}</option>
     </select>
   </div>
@@ -41,6 +57,26 @@ const route = i18next.language === "en" ? "/en" : i18next.language === "tr" ? "/
     display: flex;
     flex-direction: column;
     gap: 0.125rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabs > label {
+    flex: 1;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .tabs > input:not(:checked)+label {
+  }
+
+  .tabs > input:checked+label {
+    background-color: rgb(var(--primary));
+    color: rgb(var(--white));
   }
 
   label {

@@ -57,6 +57,7 @@
         "web": "Website development",
         "security": "Cybersecurity services",
         "dev": "Software development",
+        "apps": "Apps development",
         "other": "Other"
       },
       "message": "Project summary *",

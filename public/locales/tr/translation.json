@@ -57,6 +57,7 @@
         "web": "Web sitesi geliştirme",
         "security": "Siber güvenlik hizmetleri",
         "dev": "Yazılım geliştirme",
+        "apps": "Uygulama geliştirme",
         "other": "Diğer"
       },
       "message": "Proje özeti *",
