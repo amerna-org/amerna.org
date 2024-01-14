@@ -57,14 +57,18 @@
       "email": "E-posta *",
       "phone": "Telefon numarası *",
       "service": {
-        "title": "Hizmet türü *",
+        "client": "Hizmet türü *",
+        "freelancer": "Freelance türü *",
         "web": "Web sitesi geliştirme",
         "security": "Siber güvenlik hizmetleri",
         "dev": "Yazılım geliştirme",
         "apps": "Uygulama geliştirme",
         "other": "Diğer"
       },
-      "message": "Proje/CV özeti *",
+      "message": {
+        "client": "Proje özeti *",
+        "freelancer": "CV özeti *"
+      },
       "action": "Gönder"
     }
   },

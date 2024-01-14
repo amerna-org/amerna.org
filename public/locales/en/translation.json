@@ -57,14 +57,18 @@
       "email": "Email *",
       "phone": "Phone number *",
       "service": {
-        "title": "Service type *",
+        "client": "Service type *",
+        "freelancer": "Freelance type *",
         "web": "Website development",
         "security": "Cybersecurity services",
         "dev": "Software development",
         "apps": "Apps development",
         "other": "Other"
       },
-      "message": "Project/CV summary *",
+      "message": {
+        "client": "Project summary *",
+        "freelancer": "CV summary *"
+      },
       "action": "Send"
     }
   },

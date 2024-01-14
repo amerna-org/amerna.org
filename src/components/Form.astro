@@ -7,6 +7,7 @@ const route =
 <form action="https://formsubmit.co/support@amerna.org" method="POST">
   <input type="hidden" name="_captcha" value="false" />
   <input type="hidden" name="_template" value="box" />
+  <input id="affiliate" type="hidden" name="affiliate" />
   <input
     type="hidden"
     name="_next"
@@ -46,7 +47,13 @@ const route =
   <label for="email">{t("footer.form.phone")}</label>
   <input autocomplete="phone" id="phone" type="tel" name="phone" />
 
-  <label for="service">{t("footer.form.service.title")}</label>
+  <label id="service-client" for="service"
+    >{t("footer.form.service.client")}</label
+  >
+  <label id="service-freelancer" hidden for="service"
+    >{t("footer.form.service.freelancer")}</label
+  >
+
   <div class="custom-select">
     <select name="service" id="service">
       <option value="web">{t("footer.form.service.web")}</option>
@@ -57,7 +64,13 @@ const route =
     </select>
   </div>
 
-  <label for="message">{t("footer.form.message")}</label>
+  <label id="message-client" for="message"
+    >{t("footer.form.message.client")}</label
+  >
+  <label hidden id="message-freelancer" for="message"
+    >{t("footer.form.message.freelancer")}</label
+  >
+
   <textarea name="message" id="message" rows="10"></textarea>
 
   <input
@@ -86,9 +99,13 @@ const route =
     margin: 0;
   }
 
+  .tabs > input:not(:checked) + label {
+    border: 1px solid rgb(var(--primary));
+  }
+
   .tabs > input:checked + label {
-    background-color: rgb(var(--white));
-    color: rgb(var(--text));
+    background-color: rgb(var(--primary));
+    color: rgb(var(--white));
   }
 
   label {
@@ -167,3 +184,35 @@ const route =
     top: 55%;
   }
 </style>
+
+<script defer>
+  const clientRadio = document.getElementById("client-mode");
+  const freelancerRadio = document.getElementById("freelancer-mode");
+  const serviceClient = document.getElementById("service-client");
+  const serviceFreelancer = document.getElementById("service-freelancer");
+  const messageClient = document.getElementById("message-client");
+  const messageFreelancer = document.getElementById("message-freelancer");
+
+  const handleModeChange = (e) => {
+    console.log(e.target);
+    if (e.target.value === "client") {
+      serviceClient.hidden = false;
+      serviceFreelancer.hidden = true;
+      messageClient.hidden = false;
+      messageFreelancer.hidden = true;
+    }
+
+    if (e.target.value === "freelancer") {
+      serviceClient.hidden = true;
+      serviceFreelancer.hidden = false;
+      messageClient.hidden = true;
+      messageFreelancer.hidden = false;
+    }
+  };
+
+  clientRadio?.addEventListener("change", handleModeChange);
+  freelancerRadio?.addEventListener("change", handleModeChange);
+
+  const affiliate = document.getElementById("affiliate");
+  affiliate.value = new URLSearchParams(window.location.search).get("affiliate");
+</script>
