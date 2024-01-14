@@ -7,6 +7,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { SEO } from "astro-seo";
 import i18next, { t } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
+import { pwaInfo } from "virtual:pwa-info";
 
 interface Props {}
 ---
@@ -18,10 +19,12 @@ interface Props {}
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#3D2EE0" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/favicon-192x192.png">
+    <link rel="mask-icon" href="/icons/favicon.svg" color="#3D2EE0">
     <HeadHrefLangs />
-    <!-- <GoogleFontsOptimizer -->
-    <!--   url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" -->
-    <!-- /> -->
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
+    />
     <SEO
       title={t("site.title")!}
       description={t("site.description")!}
@@ -50,6 +53,8 @@ interface Props {}
         ],
       }}
     />
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <script src="/src/pwa.ts"></script>
   </head>
   <body>
     <Cursor />
