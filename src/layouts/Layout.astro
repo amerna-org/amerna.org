@@ -22,9 +22,9 @@ interface Props {}
     <link rel="apple-touch-icon" href="/icons/favicon-192x192.png">
     <link rel="mask-icon" href="/icons/favicon.svg" color="#3D2EE0">
     <HeadHrefLangs />
-    <!-- <GoogleFontsOptimizer -->
-    <!--   url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" -->
-    <!-- /> -->
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
+    />
     <SEO
       title={t("site.title")!}
       description={t("site.description")!}
@@ -53,8 +53,8 @@ interface Props {}
         ],
       }}
     />
-    <!-- {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />} -->
-    <!-- <script src="/src/pwa.ts"></script> -->
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <script src="/src/pwa.ts"></script>
   </head>
   <body>
     <Cursor />
@@ -63,7 +63,7 @@ interface Props {}
 
     <script>
       import "../scripts/utils.js";
-      // import "../scripts/gsap.js";
+      import "../scripts/gsap.js";
       import "../scripts/lenis.js";
     </script>
   </body>
