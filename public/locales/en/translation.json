@@ -46,9 +46,13 @@
     "dev": "Software development"
   },
   "footer": {
-    "title": "Software services",
+    "title": "Contact Us",
     "slogan": "Are you ready to bring your idea to life? Contact us now to get started!",
     "form": {
+      "mode": {
+        "client": "Request a service",
+        "freelancer": "Join the team"
+      },
       "name": "Name *",
       "email": "Email *",
       "phone": "Phone number *",

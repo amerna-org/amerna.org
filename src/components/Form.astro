@@ -14,13 +14,28 @@ const route =
   />
 
   <div class="tabs">
-    <input hidden id="client-mode" value="client" name="mode" type="radio" checked />
-    <label for="client-mode" class="cta btn md shadow">طلب خدمة</label>
-
-    <input hidden id="freelancer-mode" value="freelancer" name="mode" type="radio" />
-    <label for="freelancer-mode" class="cta btn md shadow"
-      >انضم للفريق</label
+    <input
+      hidden
+      id="client-mode"
+      value="client"
+      name="mode"
+      type="radio"
+      checked
+    />
+    <label for="client-mode" class="cta btn md shadow"
+      >{t("footer.form.mode.client")}</label
     >
+
+    <input
+      hidden
+      id="freelancer-mode"
+      value="freelancer"
+      name="mode"
+      type="radio"
+    />
+    <label for="freelancer-mode" class="cta btn md shadow">
+      {t("footer.form.mode.freelancer")}
+    </label>
   </div>
 
   <label for="name">{t("footer.form.name")}</label>
@@ -71,7 +86,7 @@ const route =
     margin: 0;
   }
 
-  .tabs > input:checked+label {
+  .tabs > input:checked + label {
     background-color: rgb(var(--primary));
     color: rgb(var(--white));
   }

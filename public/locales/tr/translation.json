@@ -46,9 +46,13 @@
     "dev": "Yazılım geliştirme"
   },
   "footer": {
-    "title": "Yazılım hizmetleri",
+    "title": "Bize Ulaşın",
     "slogan": "Fikrinizi hayata geçirmeye hazır mısınız? Başlamak için hemen bize ulaşın!",
     "form": {
+      "mode": {
+        "client": "Hizmet talep et",
+        "freelancer": "Ekibe katıl"
+      },
       "name": "Ad Soyad *",
       "email": "E-posta *",
       "phone": "Telefon numarası *",
