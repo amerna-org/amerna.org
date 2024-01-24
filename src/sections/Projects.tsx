@@ -4,15 +4,15 @@ import "./Projects.css";
 const projects = [
   {
     img: "https://amerna.org/images/proj1.png",
-    href: "https://projects.amerna.org/canadiansouq",
+    href: "https://canadiansouq.netlify.app",
   },
   {
     img: "https://amerna.org/images/voldstudio.png",
-    href: "https://projects.amerna.org/voldstudio",
+    href: "https://voldstudio.com",
   },
   {
     img: "https://amerna.org/images/proj2.png",
-    href: "https://projects.amerna.org/xerolinux",
+    href: "https://xerolinux.xyz",
   },
 ];
 
